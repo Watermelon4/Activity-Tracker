@@ -1,0 +1,15 @@
+.button {
+    -fx-background-color: "dimgrey";
+    -fx-text-fill: "ghostwhite"
+}
+.root {
+    -fx-background-color: "dimgrey";
+    -fx-font-color: "ghostwhite"
+}
+.label {
+    -fx-text-fill: "ghostwhite"
+}
+
+.split-pane {
+    -fx-background-color: "dimgrey";
+}
