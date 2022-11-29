@@ -1,6 +1,5 @@
 package mediator;
 
-import components.*;
 import java.lang.*;
 
 
@@ -9,15 +8,14 @@ import java.lang.*;
  */
 public class ConcreteMediator implements Mediator {
 
-    private ComponentA ChecklistName;
-    private ComponentB ListOfHabits;
-    private ComponentC DailyChecklist;
+    private ChecklistName checklistName ;
+    private ListOfHabits listOfHabits;
+    private DailyChecklist dailyChecklist;
 
     public ConcreteMediator() {
         throw new UnsupportedOperationException(); //replace this!
     }
 
-    @Override
     public void notifyy() {
         throw new UnsupportedOperationException(); //replace this!
     }
@@ -33,6 +31,12 @@ public class ConcreteMediator implements Mediator {
     private void reactOnC() {
         throw new UnsupportedOperationException(); //replace this!
     }
+
+
+
+
+
+
 
     private void print(Object o) {
         System.out.println(o);

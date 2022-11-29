@@ -10,4 +10,7 @@ public interface Mediator {
      */
     void notifyy();
 
+    private void print(Object o) {
+        System.out.println(o);
+    }
 }
