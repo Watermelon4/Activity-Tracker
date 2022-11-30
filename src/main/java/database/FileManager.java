@@ -16,7 +16,7 @@ public final class FileManager {
     /**
      * Initialize the date attribute. (type: Date)
      */
-    private FileManager() {
+    public FileManager() {
         Date date = new Date();
     }
 
@@ -25,7 +25,7 @@ public final class FileManager {
      *
      * @param ChecklistName String
      */
-    private static void createFile(String ChecklistName) {
+    public static void createFile(String checklistName) {
         throw new UnsupportedOperationException(); //replace this!
     }
 
@@ -34,7 +34,7 @@ public final class FileManager {
      *
      * @param ChecklistName ArrayList [String]
      */
-    private static void updateFile(ArrayList<String> ChecklistName) {
+    public static void updateFile(ArrayList<String> listOfHabits) {
         throw new UnsupportedOperationException(); //replace this!
     }
 
@@ -43,7 +43,7 @@ public final class FileManager {
      *
      * @param ChecklistName String
      */
-    private static void deleteFile(String ChecklistName) {
+    public static void deleteFile(String checklistName) {
         throw new UnsupportedOperationException(); //replace this!
     }
 

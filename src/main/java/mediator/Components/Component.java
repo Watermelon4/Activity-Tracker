@@ -3,7 +3,10 @@ package mediator.Components;
 import mediator.Mediator;
 
 /**
- * Abstract class Component
+ * MEDIATOR PATTERN<br>
+ * --------------------------<br>
+ * Abstract class component.
+ *
  */
 public abstract class Component {
 

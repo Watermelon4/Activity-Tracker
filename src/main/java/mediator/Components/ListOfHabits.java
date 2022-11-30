@@ -1,22 +1,30 @@
 package mediator.Components;
 
-import mediator.Components.Component;
+import java.util.*;
 
 public class ListOfHabits extends Component {
 
+    private ArrayList<String> listOfHabits;
+
+    /**
+     * Initialize listOfHabits attribute.
+     */
     public ListOfHabits() {
-        throw new UnsupportedOperationException();
+        this.listOfHabits = String[7];
     }
 
+    /**
+     * === UNDER CONSTRUCTION ===
+     */
+    public void confirmationButtonAction() {
 
+    }
 
-
-
-
-
-
-
-    private void print(Object o) {
-        System.out.println(o);
+    /**
+     * Getter method for listOfHabits.
+     * @return ArrayList [String]
+     */
+    public ArrayList<String> getListOfHabits() {
+        return listOfHabits;
     }
 }

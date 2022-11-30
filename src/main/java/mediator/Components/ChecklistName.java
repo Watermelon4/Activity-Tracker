@@ -1,20 +1,31 @@
 package mediator.Components;
 
-import mediator.Components.Component;
+import java.util.*;
 
 public class ChecklistName extends Component {
 
+    private String checklistName;
+
+    /**
+     * Initialize checklistName attribute.
+     */
     public ChecklistName() {
-        throw new UnsupportedOperationException();
+        this.checklistName = "";
     }
 
+    /**
+     * === UNDER CONSTRUCTION ===
+     */
+    public void confirmationButtonAction() {
 
-
-
-
-
-
-    private void print(Object o) {
-        System.out.println(o);
     }
+
+    /**
+     * Getter method for checklistName.
+     * @return String
+     */
+    public String getChecklistName() {
+        return checklistName;
+    }
+
 }
