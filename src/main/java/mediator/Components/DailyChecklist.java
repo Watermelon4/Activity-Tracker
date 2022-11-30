@@ -10,14 +10,4 @@ public class DailyChecklist extends Component {
 
 
 
-
-
-
-
-
-
-
-    private void print(Object o) {
-        System.out.println(o);
-    }
 }

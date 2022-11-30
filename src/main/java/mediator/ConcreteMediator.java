@@ -1,26 +1,36 @@
 package mediator;
 
+import mediator.Components.Component;
 import mediator.Components.ChecklistName;
 import mediator.Components.DailyChecklist;
 import mediator.Components.ListOfHabits;
 
-import java.lang.*;
+import java.util.*;
 
 
 /**
- * CONCRETE MEDIATOR
+ * MEDIATOR PATTERN<br>
+ * --------------------------<br>
+ * Concrete Mediator class.<br>
+ *
  */
 public class ConcreteMediator implements Mediator {
 
-    private ChecklistName checklistName ;
-    private ListOfHabits listOfHabits;
-    private DailyChecklist dailyChecklist;
+    private HashMap<String, Integer> visualizationData;
 
+    private Component checklistName ;
+    private Component listOfHabits;
+    private Component dailyChecklist;
+
+    /**
+     * Initialize the instance attributes.
+     */
     public ConcreteMediator() {
-        throw new UnsupportedOperationException(); //replace this!
+        this.visualizationData = new HashMap<>();
+        this.checklistName = new Component()
     }
 
-    public void notifyy() {
+    public void execute() {
         throw new UnsupportedOperationException(); //replace this!
     }
 
