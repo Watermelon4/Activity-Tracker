@@ -23,28 +23,28 @@ public final class FileManager {
     /**
      * Create a new file whose format is [ChecklistName].csv
      *
-     * @param ChecklistName String
+     * @param checklistName String
      */
     public static void createFile(String checklistName) {
-        throw new UnsupportedOperationException(); //replace this!
+        throw new UnsupportedOperationException(); //TODO
     }
 
     /**
      * Populate the existing appropriate .csv file & create a new date cache file whose format is [ChecklistName].txt
      *
-     * @param ChecklistName ArrayList [String]
+     * @param listOfHabits ArrayList [String]
      */
     public static void updateFile(ArrayList<String> listOfHabits) {
-        throw new UnsupportedOperationException(); //replace this!
+        throw new UnsupportedOperationException(); //TODO
     }
 
     /**
      * Delete two existing files: [ChecklistName].csv and [ChecklistName].txt
      *
-     * @param ChecklistName String
+     * @param checklistName String
      */
     public static void deleteFile(String checklistName) {
-        throw new UnsupportedOperationException(); //replace this!
+        throw new UnsupportedOperationException(); //TODO
     }
 
     /**

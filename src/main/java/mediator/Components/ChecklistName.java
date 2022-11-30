@@ -2,6 +2,12 @@ package mediator.Components;
 
 import java.util.*;
 
+/**
+ * MEDIATOR PATTERN<br>
+ * --------------------------<br>
+ * This component records the name of the new to-be-created checklist.
+ * It also communicates with Mediator interface.
+ */
 public class ChecklistName extends Component {
 
     private String checklistName;
@@ -14,10 +20,13 @@ public class ChecklistName extends Component {
     }
 
     /**
-     * === UNDER CONSTRUCTION ===
+     * Listen for user input from GUI and communicate with Mediator accordingly.
      */
     public void confirmationButtonAction() {
-
+        //
+        //TODO: Insert code to "listen" to user text input from GUI & update attribute checklistName
+        //
+        dialog.execute(this);
     }
 
     /**

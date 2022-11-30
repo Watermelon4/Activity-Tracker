@@ -26,16 +26,16 @@ public class ConcreteMediator implements Mediator {
         this.visualizationData = new HashMap<>();
     }
 
-    /**
+    /** //TODO
      * === UNDER CONSTRUCTION ===
      */
     public void execute(Component component) {
         if (component instanceof ChecklistName) {
             reactOnA((ChecklistName) component);
         } else if (component instanceof DailyChecklist) {
-            reactOnB((ListOfHabits) component);
+            reactOnB((ListOfHabits) component);       //TODO: Fix issue here with casting a class with an array
         } else if (component instanceof ListOfHabits) {
-            reactOnC();
+            reactOnC();             //TODO
         }
     }
 
@@ -57,11 +57,11 @@ public class ConcreteMediator implements Mediator {
         FileManager.updateFile(listOfHabits.getListOfHabits());
     }
 
-    /**
+    /** //TODO
      * === UNDER CONSTRUCTION ===
      */
     private void reactOnC() {
-        throw new UnsupportedOperationException(); //replace this!
+        throw new UnsupportedOperationException(); //TODO
     }
 
     /**

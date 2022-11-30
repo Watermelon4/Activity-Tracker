@@ -3,22 +3,25 @@ package mediator.Components;
 import java.util.*;
 
 /**
- * === UNDER CONSTRUCTION ===
+ * MEDIATOR PATTERN<br>
+ * --------------------------<br>
+ * This component records which habit has been checked off for the day.
+ * It also communicates with Mediator interface.
  */
 public class DailyChecklist extends Component {
 
-    /**
+    /** //TODO
      * === UNDER CONSTRUCTION ===
      */
     public DailyChecklist() {
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException(); //TODO
     }
 
     /**
-     * === UNDER CONSTRUCTION ===
+     * Listen for user input from GUI and communicate with Mediator accordingly.
      */
     public void confirmationButtonAction() {
-        throw new UnsupportedOperationException();
+        dialog.execute(this);
     }
 
 }
