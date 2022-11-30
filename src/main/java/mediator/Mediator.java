@@ -1,16 +1,14 @@
 package mediator;
 
+import mediator.Components.Component;
+
 /**
- * MEDIATOR INTERFACE
+ * MEDIATOR PATTERN<br>
+ * --------------------------<br>
+ * Mediator interface.
  */
 public interface Mediator {
 
-    /**
-     * bruh
-     */
-    void notifyy();
+    void execute(Component component);
 
-    private void print(Object o) {
-        System.out.println(o);
-    }
 }
