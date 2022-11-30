@@ -7,19 +7,23 @@ import java.lang.*;
 /**
  * SINGLETON PATTERN
  */
-public class FileManager {
+public final class FileManager {
 
-    private Date date;
+    private static Date date;
 
-    private void createFile(String ChecklistName) {
+    private FileManager() {
+        Date date = new Date();
+    }
+
+    private static void createFile(String ChecklistName) {
         throw new UnsupportedOperationException(); //replace this!
     }
 
-    private void updateFile(String ChecklistName, Date todayDate) {
+    private static void updateFile(String ChecklistName, Date todayDate) {
         throw new UnsupportedOperationException(); //replace this!
     }
 
-    private void deleteFile(String ChecklistName) {
+    private static void deleteFile(String ChecklistName) {
         throw new UnsupportedOperationException(); //replace this!
     }
 

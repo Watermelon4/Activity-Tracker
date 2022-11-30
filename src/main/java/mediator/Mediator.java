@@ -8,7 +8,7 @@ public interface Mediator {
     /**
      * bruh
      */
-    void notifyy();
+    void notifyy(Component sender);
 
     private void print(Object o) {
         System.out.println(o);
