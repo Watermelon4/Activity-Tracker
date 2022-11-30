@@ -1,4 +1,6 @@
-package mediator;
+package mediator.Components;
+
+import mediator.Components.Component;
 
 public class ChecklistName extends Component {
 

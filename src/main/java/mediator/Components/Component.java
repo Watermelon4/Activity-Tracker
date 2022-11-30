@@ -1,4 +1,6 @@
-package mediator;
+package mediator.Components;
+
+import mediator.Mediator;
 
 public class Component {
 

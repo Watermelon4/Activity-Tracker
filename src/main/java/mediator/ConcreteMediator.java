@@ -1,5 +1,9 @@
 package mediator;
 
+import mediator.Components.ChecklistName;
+import mediator.Components.DailyChecklist;
+import mediator.Components.ListOfHabits;
+
 import java.lang.*;
 
 
@@ -31,12 +35,6 @@ public class ConcreteMediator implements Mediator {
     private void reactOnC() {
         throw new UnsupportedOperationException(); //replace this!
     }
-
-
-
-
-
-
 
     private void print(Object o) {
         System.out.println(o);

@@ -1,5 +1,7 @@
 package mediator;
 
+import mediator.Components.Component;
+
 /**
  * MEDIATOR INTERFACE
  */
@@ -8,7 +10,7 @@ public interface Mediator {
     /**
      * bruh
      */
-    void notifyy(Component sender);
+    void notify(Component sender);
 
     private void print(Object o) {
         System.out.println(o);
