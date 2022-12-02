@@ -13,23 +13,24 @@ public class ListOfHabits extends Component {
     private ArrayList<String> listOfHabits;
 
     /**
-     * Initialize listOfHabits attribute.
+     * Initialize instance attribute.
      */
     public ListOfHabits() {
         this.listOfHabits = new ArrayList<>();
+        this.componentType = "B";
     }
 
-    /** //TODO
+    /** //TODO: This depends on how the corresponding scene is implemented!
      * === UNDER CONSTRUCTION ===
      */
     public void recordHabitEntry() {
-        throw new UnsupportedOperationException(); //TODO
+        throw new UnsupportedOperationException();
     }
 
     /**
      * Listen for user input from GUI and communicate with Mediator accordingly.
      */
-    public void confirmationButtonAction() {
+    public void userInputListener() {
         dialog.execute(this);
     }
 
