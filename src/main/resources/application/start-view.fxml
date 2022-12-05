@@ -37,6 +37,7 @@
                   <Button disable="true" mnemonicParsing="false" text="Saved List 5" GridPane.rowIndex="4" />
                </children>
             </GridPane>
+            <Button mnemonicParsing="false" text="Settings" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP" />
          </children>
       </GridPane>
    </children>
