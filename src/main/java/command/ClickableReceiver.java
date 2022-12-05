@@ -1,9 +1,9 @@
 package command;
 
 /**
- * Concrete command for Clickable.
+ * The receiver class for clickable.
  */
-public class ClickCommand implements IClickable{
+public class ClickableReceiver implements IClickable{
 
 
     /**
