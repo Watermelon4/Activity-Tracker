@@ -13,6 +13,11 @@ public class Frame {
     String fxmlName;
 
     /**
+     * The style manager for this frame.
+     */
+    FrameStyle frameStyle;
+
+    /**
      * The next frame that will be displayed when the user proceeds.
      */
     Frame nextFrame;
@@ -20,10 +25,31 @@ public class Frame {
     /**
      * The frame that leads to the current frame.
      */
-    Frame previousFrame;
+    Frame prevFrame;
 
     /**
-     * The style manager for this frame.
+     * Constructor for the Frame class. Generates a FrameStyle object.
+     * @param fxmlName the name of the fxml file "example.fxml"
      */
-    FrameStyle frameStyle;
+    public Frame(String fxmlName) {
+        this.fxmlName = fxmlName;
+        this.frameStyle = new FrameStyle();
+    }
+
+    /**
+     * Set the next frame to traverse to from this frame.
+     * @param nextFrame the next frame
+     */
+    private void setNextFrame(Frame nextFrame) {
+        this.nextFrame = nextFrame;
+    }
+
+    /**
+     * Set the frame that traverses to this frame.
+     * @param prevFrame the previous frame
+     */
+    private void setPrevFrame(Frame prevFrame) {
+        this.prevFrame = prevFrame;
+    }
+
 }
