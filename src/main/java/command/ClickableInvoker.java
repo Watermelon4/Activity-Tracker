@@ -1,5 +1,8 @@
 package command;
 
+/**
+ * The Invoker class for Clickable commands.
+ */
 public class ClickableInvoker {
     private final ICommand clickCommand;
 

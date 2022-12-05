@@ -1,9 +1,12 @@
 package command;
 
+/**
+ * The receiver class for previous frame click.
+ */
 public class ClickablePrevFrame implements IClickable {
 
     /**
-     * Constructor for the ClickableNextFrame concrete command.
+     * Constructor for the previous frame receiver.
      */
     public ClickablePrevFrame() {};
 
