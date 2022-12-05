@@ -18,14 +18,10 @@ import java.util.*;
  */
 public class ConcreteMediator implements Mediator {
 
-    private HashMap<String, Integer> visualizationData;
-
     /**
      * Initialize the instance attributes.
      */
-    public ConcreteMediator() {
-        this.visualizationData = new HashMap<>();
-    }
+    public ConcreteMediator() {}
 
     /**
      * Depending on the type of Component that is passed, call the appropriate method.
