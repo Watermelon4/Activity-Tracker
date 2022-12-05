@@ -32,19 +32,14 @@ public class StyleManager {
     }
 
     /**
-     * Sends a new style to all FrameStyle objects.
+     * Receives and sends a new style to all FrameStyle objects.
      */
-    public void updateSubscribers() {
-        for (FrameStyle frameStyle : subscribedFrames) {
-            frameStyle.update();
+    public void updateSubscribers(String style, String styleSheet) {
+        if (stylesheets.contains(styleSheet)) {
+            for (FrameStyle frameStyle : subscribedFrames) {
+                frameStyle.update(style, styleSheet);
+            }
         }
-    }
-
-    /**
-     * Receives a new style from the user.
-     */
-    public void receiveNewStyle() {
-
     }
 
 }
