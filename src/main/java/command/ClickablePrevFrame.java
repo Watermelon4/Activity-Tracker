@@ -1,6 +1,6 @@
 package command;
 
-public class ClickablePrevFrame implements IClick {
+public class ClickablePrevFrame implements IClickable {
 
     /**
      * Constructor for the ClickableNextFrame concrete command.

@@ -3,7 +3,7 @@ package command;
 /**
  * The command interface for single click inputs.
  */
-public interface IClick {
+public interface IClickable {
 
     /**
      * The abstract method for click type commands.
