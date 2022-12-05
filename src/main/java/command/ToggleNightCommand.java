@@ -1,33 +1,41 @@
 package command;
 
 /**
- * The Receiver class for a Toggleable contrast.
+ * The concrete command for night mode toggle.
  */
-public class ToggleableNight implements IToggleable {
+public class ToggleNightCommand implements ICommand {
 
     /**
-     * The current state of the Toggleable object.
+     * The current state of the night mode setting.
      */
-    private boolean state;
+    private boolean currentState;
 
     /**
-     * Constructor that defines the default state of the Toggleable object.
+     * The IToggleable interface.
+     */
+    private final IToggleable toggleable;
+
+    /**
+     * Constructor for the ToggleContrastCommand class.
      *
-     * @param defaultState the default state
+     * @param defaultState the default state of the contrast setting
+     * @param toggleable the toggleable interface
      */
-    public ToggleableNight(boolean defaultState) {
-        this.state = defaultState;
+    public ToggleNightCommand(boolean defaultState, IToggleable toggleable) {
+        this.currentState = defaultState;
+        this.toggleable = toggleable;
     }
+
     /**
      * {@inheritDoc}
      */
     @Override
-    public void toggle() {
-        if (state) { // if state is on, switch to off
-            System.out.println("night turned off");
+    public void execute() {
+        if (currentState) { // if state is on, switch to off
+            toggleable.toggleNightOff();
         } else { // if state is off, switch to on
-            System.out.println("night turned on");
+            toggleable.toggleNightOn();
         }
-        state = !state; // invert the saved state
+        currentState = !currentState; // invert the saved state
     }
 }

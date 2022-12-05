@@ -1,26 +1,41 @@
 package command;
 
 /**
- * Concrete command for Toggleable.
+ * Concrete command for Toggleable contrast command.
  */
-public class ToggleCommand implements ICommand {
-
-    private IToggleable toggleable;
+public class ToggleContrastCommand implements ICommand {
 
     /**
-     * Constructor that defines this concrete command.
-     * @param toggleable
+     * The current state of the contrast setting.
      */
-    public ToggleCommand(IToggleable toggleable) {
+    private boolean currentState;
+
+    /**
+     * The IToggleable interface.
+     */
+    private final IToggleable toggleable;
+
+    /**
+     * Constructor for the ToggleContrastCommand class.
+     *
+     * @param defaultState the default state of the contrast setting
+     * @param toggleable the toggleable interface
+     */
+    public ToggleContrastCommand(boolean defaultState, IToggleable toggleable) {
+        this.currentState = defaultState;
         this.toggleable = toggleable;
     }
 
     /**
      * {@inheritDoc}
-     * From IToggleable, executes the toggle command.
      */
     @Override
     public void execute() {
-        toggleable.toggle();
+        if (currentState) { // if currentState is on, switch to off
+            toggleable.toggleContrastOff();
+        } else { // if currentState is off, switch to on
+            toggleable.toggleContrastOn();
+        }
+        currentState = !currentState; // invert the saved currentState
     }
 }

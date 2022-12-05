@@ -3,7 +3,7 @@ package command;
 /**
  * The Receiver class for a Toggleable contrast.
  */
-public class ToggleReceiver implements IToggleable {
+public class ToggleableReceiver implements IToggleable {
 
     /**
      * {@inheritDoc}

@@ -3,24 +3,22 @@ package command;
 /**
  * Concrete command for Clickable.
  */
-public class ClickCommand implements ICommand{
+public class ClickCommand implements IClickable{
 
-    private final IClickable clickable;
 
     /**
-     * Constructor that defines this concrete command.
-     * @param clickable a receiver instance for clickable
+     * {@inheritDoc}
      */
-    public ClickCommand(IClickable clickable) {
-        this.clickable = clickable;
+    @Override
+    public void clickNextFrame() {
+
     }
 
     /**
      * {@inheritDoc}
-     * From IToggleable, executes the toggle command.
      */
     @Override
-    public void execute() {
-        clickable.click();
+    public void clickPrevFrame() {
+
     }
 }
