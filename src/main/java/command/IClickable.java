@@ -6,7 +6,13 @@ package command;
 public interface IClickable {
 
     /**
-     * The abstract method for click type commands.
+     * Goes to the next frame.
      */
-    public void click();
+    public void clickNextFrame();
+
+    /**
+     * Goes to the previous frame.
+     */
+    public void clickPrevFrame();
+
 }
