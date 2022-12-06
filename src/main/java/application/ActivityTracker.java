@@ -10,8 +10,8 @@ import java.io.IOException;
 public class ActivityTracker extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ActivityTracker.class.getResource("checklist-create-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        FXMLLoader fxmlLoader = new FXMLLoader(ActivityTracker.class.getResource("ViewChart.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 480, 360); //1200 x 800 for original dimensions
         // scene.getStylesheets().add("stylesheets/start-view.css");
         stage.setTitle("Activity Tracker");
         stage.setScene(scene);
