@@ -8,4 +8,5 @@ public class SettingsFrame extends Frame {
     public SettingsFrame() {
         super("settings-view.fxml");
     }
+
 }
