@@ -17,10 +17,10 @@ import java.util.List;
 public class ViewChartFilter {
 
     private CheckComboBox checkComboBox;
-    private  ViewBarChart visual;
-    private BorderPane borderPane2;
+    public ViewBarChart visual;
+    public BorderPane borderPane2;
     /**
-     * ViewBarChart class constructor
+     * ViewFilterChart class constructor
      * @param visual a ViewBarChart
      * @param borderPane2 a BorderPane
      */
@@ -31,7 +31,7 @@ public class ViewChartFilter {
     }
 
     /**
-     * Creates a new observable filter object.
+     * Creates a new CheckComboBox object
      */
     public void createFilterMap(){
         ObservableList<String> filterList = FXCollections.observableArrayList();
@@ -79,7 +79,9 @@ public class ViewChartFilter {
      * Returns list of filtered items.
      */
     public List<String> getSelectedItems(CheckComboBox<String> checkComboBox) {
+        System.out.println(checkComboBox.getCheckModel().getCheckedItems());
         return checkComboBox.getCheckModel().getCheckedItems();
+
     }
 }
 
