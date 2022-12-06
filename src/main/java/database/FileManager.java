@@ -1,10 +1,9 @@
 package database;
 
-import mediator.Components.ListOfHabits;
-
 import java.io.File;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 /**
@@ -88,7 +87,7 @@ public final class FileManager implements Serializable {
      *
      * @return HashMap [String: Integer]
      */
-    public HashMap<String, Integer> getHabitCounts() {
+    public HashMap<String, Integer> getCurrChecklist() {
         return currChecklist.getHabitCounts();
     }
 
