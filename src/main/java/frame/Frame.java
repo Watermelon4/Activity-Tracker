@@ -48,8 +48,15 @@ public class Frame {
      * Set the frame that traverses to this frame.
      * @param prevFrame the previous frame
      */
-    private void setPrevFrame(Frame prevFrame) {
+    public void setPrevFrame(Frame prevFrame) {
         this.prevFrame = prevFrame;
     }
 
+    /**
+     * Returns the name of the FXML file for this frame.
+     * @return the fxml file name
+     */
+    public String getFXML() {
+        return fxmlName;
+    }
 }
