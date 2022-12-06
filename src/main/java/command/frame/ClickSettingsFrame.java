@@ -1,5 +1,9 @@
 package command.frame;
 
+import javafx.scene.layout.Pane;
+
+import java.io.IOException;
+
 /**
  * The concrete command for going to the settings frame.
  */
@@ -11,10 +15,16 @@ public class ClickSettingsFrame implements IFrameCommand {
     private final IClickableFrame clickable;
 
     /**
+     * The root of the scene
+     */
+    private final Pane root;
+
+    /**
      * Constructor for the click settings concrete command.
      */
-    public ClickSettingsFrame(IClickableFrame clickable) {
+    public ClickSettingsFrame(IClickableFrame clickable, Pane root) {
         this.clickable = clickable;
+        this.root = root;
     }
 
     /**
@@ -22,8 +32,8 @@ public class ClickSettingsFrame implements IFrameCommand {
      * Executes command to go to the settings frame.
      */
     @Override
-    public void execute() {
-        clickable.clickSettingsFrame();
+    public void execute() throws IOException {
+        clickable.clickSettingsFrame(root);
     }
 
     /**
@@ -31,7 +41,6 @@ public class ClickSettingsFrame implements IFrameCommand {
      * @return the fxml file name of the settings frame
      */
     @Override
-    public String frameToFXML() {
-        return "settings-view.fxml";    // replace later
-    }
+    public String frameToFXML() { return "settings-view.fxml"; }   // replace later
+
 }

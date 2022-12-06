@@ -1,5 +1,9 @@
 package command.frame;
 
+import javafx.scene.layout.Pane;
+
+import java.io.IOException;
+
 /**
  * The concrete command for going to the checklist frame.
  */
@@ -11,10 +15,16 @@ public class ClickChecklistFrame implements IFrameCommand {
     private final IClickableFrame clickable;
 
     /**
+     * The root of the scene
+     */
+    private final Pane root;
+
+    /**
      * Constructor for the click checklist concrete command.
      */
-    public ClickChecklistFrame(IClickableFrame clickable) {
+    public ClickChecklistFrame(IClickableFrame clickable, Pane root) {
         this.clickable = clickable;
+        this.root = root;
     }
 
     /**
@@ -22,8 +32,8 @@ public class ClickChecklistFrame implements IFrameCommand {
      * Executes command to go to the checklist frame.
      */
     @Override
-    public void execute() {
-        clickable.clickChecklistFrame();
+    public void execute() throws IOException {
+        clickable.clickChecklistFrame(root);
     }
 
     /**
@@ -31,8 +41,6 @@ public class ClickChecklistFrame implements IFrameCommand {
      * @return the fxml file name of the checklist frame
      */
     @Override
-    public String frameToFXML() {
-        return "checklist-view.fxml";    // replace later
-    }
+    public String frameToFXML() { return "checklist-view.fxml"; }    // replace later
 
 }
