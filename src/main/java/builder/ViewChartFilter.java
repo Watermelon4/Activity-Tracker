@@ -79,7 +79,6 @@ public class ViewChartFilter {
      * Returns list of filtered items.
      */
     public List<String> getSelectedItems(CheckComboBox<String> checkComboBox) {
-        System.out.println(checkComboBox.getCheckModel().getCheckedItems());
         return checkComboBox.getCheckModel().getCheckedItems();
 
     }
