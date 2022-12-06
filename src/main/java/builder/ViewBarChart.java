@@ -6,7 +6,6 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.BorderPane;
-import mediator.ConcreteMediator;
 import java.util.HashMap;
 
 /**
@@ -48,12 +47,20 @@ public class ViewBarChart implements IViewChart{
         barChart.getData().clear();
         XYChart.Series data = new XYChart.Series();
         data.setName("Hobby Tracker");
-        for  (String k: this.dataMap.keySet()){
-            data.getData().add(new XYChart.Data(k,this.dataMap.get(k)));
+        try {
+            for (String k : this.dataMap.keySet()) {
+                data.getData().add(new XYChart.Data(k, this.dataMap.get(k)));
+            }
+            barChart.getData().add(data);
+            barChart.setStyle("-fx-font-size: " + 10.7 + "px;");
+            barChart.setLegendVisible(false);
+            barChart.setTitle("Hobby Tracker");
+            barChart.setVerticalGridLinesVisible(false);
+            borderPane.setCenter(barChart);
+        }catch (NullPointerException exception){
+            System.out.println("No Hobbies were added to your list.");
+            System.exit(1);
         }
-        barChart.getData().add(data);
-        barChart.setStyle("-fx-font-size: " + 10 + "px;");
-        borderPane.setCenter(barChart);
     }
     /**
      *  returns dataMap attribute.

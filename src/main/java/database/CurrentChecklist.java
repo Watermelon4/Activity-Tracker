@@ -20,7 +20,14 @@ public class CurrentChecklist implements Serializable {
      */
     public CurrentChecklist(String checklistName) {
         this.name = checklistName;
-        this.habitCounts = new HashMap<>();
+//        this.habitCounts = new HashMap<>();
+//        this.habitCounts.put("Run",2);
+//        this.habitCounts.put("Read",4);
+//        this.habitCounts.put("Swim",6);
+//        this.habitCounts.put("Eat",3);
+//        this.habitCounts.put("Bowl",7);
+//        this.habitCounts.put("Skip",3);
+//        this.habitCounts.put("Dance",5);
         this.dateStack = new Stack<>();
     }
 

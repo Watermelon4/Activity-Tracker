@@ -2,6 +2,7 @@ package application;
 
 import builder.ViewBarChart;
 import builder.ViewChartFilter;
+import builder.ViewChartSort;
 import database.CurrentChecklist;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,6 +30,9 @@ public class ViewChartController {
         ViewChartFilter filter = new ViewChartFilter(visual,borderPaneFilter);
         filter.createFilterMap();
         filter.filterChart(visual);
+        ViewChartSort sort = new ViewChartSort(visual,borderPaneFilter);
+        sort.createSortMap();
+        sort.sortChart();
 
     }
 
