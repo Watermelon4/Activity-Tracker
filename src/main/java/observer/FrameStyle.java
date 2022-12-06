@@ -21,7 +21,7 @@ public class FrameStyle implements ISubscriber {
      * {@inheritDoc}
      */
     @Override
-    public void update(String style, String stylesheet) {
+    public void update() {
         // if style exists, remove
         // apply new style
     }

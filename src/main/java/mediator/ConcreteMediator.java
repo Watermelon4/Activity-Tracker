@@ -1,12 +1,11 @@
 package mediator;
 
 import database.FileManager;
-import mediator.Components.CheckedHabits;
 import mediator.Components.Component;
 import mediator.Components.ChecklistName;
+import mediator.Components.DailyChecklist;
 import mediator.Components.ListOfHabits;
 
-import java.io.File;
 import java.util.*;
 
 
@@ -18,52 +17,51 @@ import java.util.*;
  */
 public class ConcreteMediator implements Mediator {
 
+    private HashMap<String, Integer> visualizationData;
+
     /**
      * Initialize the instance attributes.
      */
-    public ConcreteMediator() {}
+    public ConcreteMediator() {
+        this.visualizationData = new HashMap<>();
+    }
 
-    /**
-     * Depending on the type of Component that is passed, call the appropriate method.
-     *
-     * @param component Component
+    /** //TODO
+     * === UNDER CONSTRUCTION ===
      */
     public void execute(Component component) {
-        switch (component.componentType) {
-            case "A" -> reactOnA(component);
-            case "B" -> reactOnB(component);
-            case "C" -> reactOnC(component);
+        if (component instanceof ChecklistName) {
+            reactOnA((ChecklistName) component);
+        } else if (component instanceof DailyChecklist) {
+            reactOnB((ListOfHabits) component);       //TODO: Fix issue here with casting a class with an array
+        } else if (component instanceof ListOfHabits) {
+            reactOnC();             //TODO
         }
     }
 
     /**
-     * Call FileManager.initNewChecklist()
+     * Call FileManager.createFile()
      *
-     * @param checklistName Component
+     * @param checklistName ChecklistName
      */
-    private void reactOnA(Component checklistName) {
-        ChecklistName checklistNameCasted = (ChecklistName) checklistName;
-        FileManager.initNewChecklist(checklistNameCasted.getChecklistName());
+    private void reactOnA(ChecklistName checklistName) {
+        FileManager.createFile(checklistName.getChecklistName());
     }
 
     /**
-     * Call FileManager.finishNewChecklist()
+     * Call FileManager.updateFile()
      *
-     * @param listOfHabits Component
+     * @param listOfHabits ListOfHabits
      */
-    private void reactOnB(Component listOfHabits) {
-        ListOfHabits listOfHabitsCasted = (ListOfHabits) listOfHabits;
-        FileManager.finishNewChecklist(listOfHabitsCasted.getListOfHabits());
+    private void reactOnB(ListOfHabits listOfHabits) {
+        FileManager.updateFile(listOfHabits.getListOfHabits());
     }
 
-    /**
-     * Call FileManager.updateExistingChecklist()
-     *
-     * @param checkedHabits Component
+    /** //TODO
+     * === UNDER CONSTRUCTION ===
      */
-    private void reactOnC(Component checkedHabits) {
-        CheckedHabits checkedHabitsCasted = (CheckedHabits) checkedHabits;
-        FileManager.updateExistingChecklist(checkedHabitsCasted.getCheckedOffHabits());
+    private void reactOnC() {
+        throw new UnsupportedOperationException(); //TODO
     }
 
     /**
