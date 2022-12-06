@@ -6,9 +6,24 @@ package command;
 public interface IToggleable {
 
     /**
-     * Switches states.
+     * toggles contrast state to on.
      */
-    void toggle();
+    void toggleContrastOn();
+
+    /**
+     * toggles contrast state to off.
+     */
+    void toggleContrastOff();
+
+    /**
+     * toggles night mode state to on.
+     */
+    void toggleNightOn();
+
+    /**
+     * toggles night mode state to off.
+     */
+    void toggleNightOff();
 
     // reset to default state command
 }

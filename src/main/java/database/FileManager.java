@@ -1,5 +1,9 @@
 package database;
 
+import mediator.Components.ListOfHabits;
+
+import java.io.File;
+import java.io.Serializable;
 import java.util.*;
 
 
@@ -9,42 +13,79 @@ import java.util.*;
  * This class creates new files & updates/deletes existing files.<br>
  * Methods are called by the ConcreteMediator class.
  */
-public final class FileManager {
+public final class FileManager implements Serializable {
 
-    private static Date date;
+    private static CurrentChecklist currChecklist;
 
-    /**
-     * Initialize the date attribute. (type: Date)
-     */
     public FileManager() {
-        Date date = new Date();
     }
 
     /**
-     * Create a new file whose format is [ChecklistName].csv
+     * Initialize a new CurrentChecklist object.
      *
      * @param checklistName String
      */
-    public static void createFile(String checklistName) {
-        throw new UnsupportedOperationException(); //TODO
+    public static void initNewChecklist(String checklistName) {
+        currChecklist = new CurrentChecklist(checklistName);
     }
 
     /**
-     * Populate the existing appropriate .csv file & create a new date cache file whose format is [ChecklistName].txt
+     * Populate the newly-initialized CurrentChecklist object.
      *
      * @param listOfHabits ArrayList [String]
      */
-    public static void updateFile(ArrayList<String> listOfHabits) {
-        throw new UnsupportedOperationException(); //TODO
+    public static void finishNewChecklist(ArrayList<String> listOfHabits) {
+        for (String habit: listOfHabits) {
+            currChecklist.getHabitCounts().put(habit, 0);
+        }
+    }
+
+    public static void updateExistingChecklist(ArrayList<String> checkedOffHabits) {
+        int penalty = currChecklist.penaltyCalculator();
+        HashMap<String, Integer> habitCounts = currChecklist.getHabitCounts();
+
+        for (String checkedHabit: checkedOffHabits) {
+            Integer newCount = habitCounts.get(checkedHabit) - (penalty - 1);
+            habitCounts.put(checkedHabit, newCount);
+        }
+
+        for (String checkedHabit: checkedOffHabits) {
+            if (habitCounts.get(checkedHabit) < 0) {
+                habitCounts.put(checkedHabit, 0);
+            }
+        }
+
+        currChecklist.updateDateStack();
+
+        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + "//.ser");
+        currChecklist.saveChecklist(fileNameInput);
+    }
+
+    /** //TODO: This depends on how the corresponding scene is implemented!
+     * Load an existing file.
+     *
+     * @param filename File
+     */
+    public static void loadFile(File filename) {
+        throw new UnsupportedOperationException();
+    }
+
+    /** //TODO: This depends on how the corresponding scene is implemented!
+     * Delete the chosen file.
+     *
+     * @param filename File
+     */
+    public static void deleteFile(File filename) {
+        throw new UnsupportedOperationException();
     }
 
     /**
-     * Delete two existing files: [ChecklistName].csv and [ChecklistName].txt
+     * Getter method for the HashMap that contains the CurrentChecklist's visualization data.
      *
-     * @param checklistName String
+     * @return HashMap [String: Integer]
      */
-    public static void deleteFile(String checklistName) {
-        throw new UnsupportedOperationException(); //TODO
+    public HashMap<String, Integer> getHabitCounts() {
+        return currChecklist.getHabitCounts();
     }
 
     /**
