@@ -16,7 +16,7 @@ public class ActivityTracker extends Application {
         // Added by DANNY
         // =================
         FileManager fm = FileManager.getInstance();
-        HashMap<String, Integer> dataForVisuals = fm.getHabitCounts();
+        HashMap<String, Integer> dataForVisuals = fm.getCurrChecklist();
 
         // Added by NUGO
         // =================
