@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    public String bruh = "this is hard asf";
+    public String currChecklistName;
 
     @FXML
     public CheckBox cb_1;
@@ -119,19 +119,21 @@ public class Controller {
 
         ArrayList<String> habitList = new ArrayList<>();
         if (!tf_habit_1.getText().equals("")) {habitList.add(tf_habit_1.getText());
-        } else habitList.add("N/A");
+        } else habitList.add("n/a");
         if (!tf_habit_2.getText().equals("")) {habitList.add(tf_habit_2.getText());
-        } else habitList.add("N/A");
+        } else habitList.add("n/a");
         if (!tf_habit_3.getText().equals("")) {habitList.add(tf_habit_3.getText());
-        } else habitList.add("N/A");
+        } else habitList.add("n/a");
         if (!tf_habit_4.getText().equals("")) {habitList.add(tf_habit_4.getText());
-        } else habitList.add("N/A");
+        } else habitList.add("n/a");
         if (!tf_habit_5.getText().equals("")) {habitList.add(tf_habit_5.getText());
-        } else habitList.add("N/A");
+        } else habitList.add("n/a");
         if (!tf_habit_6.getText().equals("")) {habitList.add(tf_habit_6.getText());
-        } else habitList.add("N/A");
+        } else habitList.add("n/a");
         if (!tf_habit_7.getText().equals("")) {habitList.add(tf_habit_7.getText());
-        } else habitList.add("N/A");
+        } else habitList.add("n/a");
+
+        currChecklistName = tf_checklistName.getText();
 
         NewChecklist newChecklist = new NewChecklist(tf_checklistName.getText(), habitList);
         newChecklist.userInputListener();
@@ -139,14 +141,18 @@ public class Controller {
         String filename = newChecklist.getChecklistName() + ".ser";
         loadChecklist(filename);
 
-        // switch scene
-        showChecklist();
-
-        cb_1.setText("bruh");
-        System.out.println(cb_1.getText());
+        System.out.println(habitList.get(0));
+        System.out.println(habitList.get(1));
+        System.out.println(habitList.get(2));
+        System.out.println(habitList.get(3));
+        System.out.println(habitList.get(4));
+        System.out.println(habitList.get(5));
+        System.out.println(habitList.get(6));
 //        File f = new File("savefiles//" + filename);
 //        f.delete();
 
+        // switch scene
+        showChecklist();
 
     }
 
@@ -178,55 +184,35 @@ public class Controller {
 
     public void userInputListener_02() throws IOException{
 
-        ArrayList<String> bruh = new ArrayList<>();
-        if (cb_1.isSelected()) bruh.add(cb_1.getText());
-        if (cb_2.isSelected()) bruh.add(cb_2.getText());
-        if (cb_3.isSelected()) bruh.add(cb_3.getText());
-        if (cb_4.isSelected()) bruh.add(cb_4.getText());
-        if (cb_5.isSelected()) bruh.add(cb_5.getText());
-        if (cb_6.isSelected()) bruh.add(cb_6.getText());
-        if (cb_7.isSelected()) bruh.add(cb_7.getText());
+        ArrayList<Integer> bruh = new ArrayList<>();
+        if (cb_1.isSelected()) {bruh.add(1);} else {bruh.add(0);}
+        if (cb_2.isSelected()) {bruh.add(1);} else {bruh.add(0);}
+        if (cb_3.isSelected()) {bruh.add(1);} else {bruh.add(0);}
+        if (cb_4.isSelected()) {bruh.add(1);} else {bruh.add(0);}
+        if (cb_5.isSelected()) {bruh.add(1);} else {bruh.add(0);}
+        if (cb_6.isSelected()) {bruh.add(1);} else {bruh.add(0);}
+        if (cb_7.isSelected()) {bruh.add(1);} else {bruh.add(0);}
+
+//        if (cb_2.isSelected()) bruh.add(cb_2.getText());
+//        if (cb_3.isSelected()) bruh.add(cb_3.getText());
+//        if (cb_4.isSelected()) bruh.add(cb_4.getText());
+//        if (cb_5.isSelected()) bruh.add(cb_5.getText());
+//        if (cb_6.isSelected()) bruh.add(cb_6.getText());
+//        if (cb_7.isSelected()) bruh.add(cb_7.getText());
 
         CheckedHabits checkedHabits = new CheckedHabits(bruh);
         checkedHabits.userInputListener();
 
         showChart();
+
+        print(FileManager.getInstance().getChecklistName() + " at Controller");
+
     }
 
-    public String displayHabit_1() {
-        FileManager fm = FileManager.getInstance();
-        return fm.getListOfHabits().get(0);
-    }
 
-    public String displayHabit_2() {
-        FileManager fm = FileManager.getInstance();
-        return fm.getListOfHabits().get(1);
-    }
 
-    public String displayHabit_3() {
-        FileManager fm = FileManager.getInstance();
-        return fm.getListOfHabits().get(2);
+    private void print(Object o) {
+        System.out.println(o);
     }
-
-    public String displayHabit_4() {
-        FileManager fm = FileManager.getInstance();
-        return fm.getListOfHabits().get(3);
-    }
-
-    public String displayHabit_5() {
-        FileManager fm = FileManager.getInstance();
-        return fm.getListOfHabits().get(4);
-    }
-
-    public String displayHabit_6() {
-        FileManager fm = FileManager.getInstance();
-        return fm.getListOfHabits().get(5);
-    }
-
-    public String displayHabit_7() {
-        FileManager fm = FileManager.getInstance();
-        return fm.getListOfHabits().get(6);
-    }
-
 
 }

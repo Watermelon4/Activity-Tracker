@@ -21,8 +21,8 @@ public class CurrentChecklist implements Serializable {
      */
     public CurrentChecklist(String checklistName) {
         this.habitCounts = new HashMap<>();
-        this.name = checklistName;
         this.listOfHabits = new ArrayList<>();
+        this.name = checklistName;
 //        this.habitCounts.put("Run",2);
 //        this.habitCounts.put("Read",4);
 //        this.habitCounts.put("Swim",6);
@@ -89,6 +89,10 @@ public class CurrentChecklist implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void print(Object o) {
+        System.out.println(o);
     }
 
 }

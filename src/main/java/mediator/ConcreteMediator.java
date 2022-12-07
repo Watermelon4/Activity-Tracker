@@ -49,6 +49,7 @@ public class ConcreteMediator implements Mediator {
      * @param checkedHabits Component
      */
     private void reactOnB(Component checkedHabits) {
+        print(FileManager.getInstance().getChecklistName() + " at ConcreteMediator");
         CheckedHabits checkedHabitsCasted = (CheckedHabits) checkedHabits;
         fm.updateExistingChecklist(checkedHabitsCasted.getCheckedOffHabits());
     }

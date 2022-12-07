@@ -35,20 +35,27 @@ public final class FileManager implements Serializable {
             currChecklist.getHabitCounts().put(habit, 0);
             currChecklist.getListOfHabits().add(habit);
         }
-//        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + ".ser");
-//        currChecklist.saveChecklist(fileNameInput);
+        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + ".ser");
+        currChecklist.saveChecklist(fileNameInput);
     }
 
-    public void updateExistingChecklist(ArrayList<String> checkedOffHabits) {
+    public void updateExistingChecklist(ArrayList<Integer> checkedOffHabits) {
         int penalty = currChecklist.penaltyCalculator();
         HashMap<String, Integer> habitCounts = currChecklist.getHabitCounts();
 
-        for (String checkedHabit: checkedOffHabits) {
-            Integer newCount = habitCounts.get(checkedHabit) - (penalty - 1);
-            habitCounts.put(checkedHabit, newCount);
+        int i = 0;
+        for (Integer checkedHabit: checkedOffHabits) {
+            if (checkedHabit == 0) {
+                Integer newCount = habitCounts.get(currChecklist.getListOfHabits().get(i)) - penalty;
+                habitCounts.put(currChecklist.getListOfHabits().get(i), newCount);
+            } else if (checkedHabit == 1) {
+                Integer newCount = habitCounts.get(currChecklist.getListOfHabits().get(i)) - (penalty - 1);
+                habitCounts.put(currChecklist.getListOfHabits().get(i), newCount);
+            }
+            ++i;
         }
 
-        for (String checkedHabit: checkedOffHabits) {
+        for (String checkedHabit: currChecklist.getListOfHabits()) {
             if (habitCounts.get(checkedHabit) < 0) {
                 habitCounts.put(checkedHabit, 0);
             }
@@ -56,8 +63,18 @@ public final class FileManager implements Serializable {
 
         currChecklist.updateDateStack();
 
-        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + ".ser");
+//        // delete .ser
+        String filename = currChecklist.getChecklistName();
+//        File f = new File("savefiles//" + filename + ".ser");
+//        boolean sanityCheck = f.delete();
+//        print(sanityCheck);
+
+
+        // save .ser
+        File fileNameInput = new File("savefiles//" + filename + ".ser");
         currChecklist.saveChecklist(fileNameInput);
+
+        print(FileManager.getInstance().getChecklistName() + " at FM after save");
     }
 
     /** //TODO: This depends on how the corresponding scene is implemented!
@@ -94,6 +111,15 @@ public final class FileManager implements Serializable {
      */
     public ArrayList<String> getListOfHabits() {
         return currChecklist.getListOfHabits();
+    }
+
+    /**
+     * Getter method for the list of habits for currChecklist.
+     *
+     * @return HashMap [String: Integer]
+     */
+    public String getChecklistName() {
+        return currChecklist.getChecklistName();
     }
 
     /**

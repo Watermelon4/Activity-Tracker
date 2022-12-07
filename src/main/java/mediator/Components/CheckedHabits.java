@@ -1,5 +1,6 @@
 package mediator.Components;
 
+import database.FileManager;
 import mediator.ConcreteMediator;
 
 import java.util.*;
@@ -15,12 +16,12 @@ import java.util.*;
  */
 public class CheckedHabits extends Component {
 
-    private ArrayList<String> checkedOffHabits;
+    private ArrayList<Integer> checkedOffHabits;
 
     /**
      * Initialize instance attribute.
      */
-    public CheckedHabits(ArrayList<String> checkedOffHabits) {
+    public CheckedHabits(ArrayList<Integer> checkedOffHabits) {
         this.checkedOffHabits = checkedOffHabits;
         this.componentType = "B";
         this.dialog = new ConcreteMediator();
@@ -30,11 +31,16 @@ public class CheckedHabits extends Component {
      * Listen for user input from GUI and communicate with Mediator accordingly.
      */
     public void userInputListener() {
+        print(FileManager.getInstance().getChecklistName() + " at CheckedHabit");
         dialog.execute(this);
     }
 
-    public ArrayList<String> getCheckedOffHabits() {
+    public ArrayList<Integer> getCheckedOffHabits() {
         return checkedOffHabits;
+    }
+
+    private void print(Object o) {
+        System.out.println(o);
     }
 
 }
