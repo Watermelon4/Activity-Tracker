@@ -17,6 +17,15 @@ public class Controller {
     public String currChecklistName;
 
     @FXML
+    private ClickableFrameInvoker frameInvoker;
+
+    /**
+     * The root AnchorPane
+     */
+    @FXML
+    private Pane root;
+
+    @FXML
     public CheckBox cb_1;
     @FXML
     public CheckBox cb_2;
@@ -30,15 +39,6 @@ public class Controller {
     public CheckBox cb_6;
     @FXML
     public CheckBox cb_7;
-
-    @FXML
-    private ClickableFrameInvoker frameInvoker;
-
-    /**
-     * The root AnchorPane
-     */
-    @FXML
-    private Pane root;
 
     @FXML
     public TextField tf_checklistName;
