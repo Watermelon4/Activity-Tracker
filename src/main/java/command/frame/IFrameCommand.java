@@ -12,5 +12,5 @@ public interface IFrameCommand {
     /**
      * Returns the fxml file name of the target frame.
      */
-    String frameToFXML();
+    String frameToFXML();   // currently not useful since frameStack resets
 }

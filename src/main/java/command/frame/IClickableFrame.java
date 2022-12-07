@@ -1,7 +1,5 @@
 package command.frame;
 
-import javafx.scene.layout.Pane;
-
 import java.io.IOException;
 
 /**
@@ -10,28 +8,28 @@ import java.io.IOException;
 public interface IClickableFrame {
 
     /**
-     * Builds and displays the checklist frame.
+     * Displays the checklist frame.
      */
-    void clickChecklistFrame(Pane root) throws IOException;
+    void clickChecklistFrame() throws IOException;
 
     /**
-     * Builds and displays the create checklist frame.
+     * Displays the checklist creation frame.
      */
-    void clickCreateFrame(Pane root) throws IOException;
+    void clickCreateFrame() throws IOException;
 
     /**
-     * Builds and displays the settings frame.
+     * Displays the settings frame.
      */
-    void clickSettingsFrame(Pane root) throws IOException;
+    void clickSettingsFrame() throws IOException;
 
     /**
-     * Builds and displays the start frame.
+     * Displays the start frame.
      */
-    void clickStartFrame(Pane root) throws IOException;
+    void clickStartFrame() throws IOException;
 
     /**
-     * Builds and displays the start frame.
+     * Displays the chart frame.
      */
-    void clickChartFrame(Pane root) throws IOException;
+    void clickChartFrame() throws IOException;
 
 }

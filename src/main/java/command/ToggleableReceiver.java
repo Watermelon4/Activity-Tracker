@@ -1,5 +1,7 @@
 package command;
 
+import application.ActivityTracker;
+
 /**
  * The Receiver class for a Toggleable contrast.
  */
@@ -10,7 +12,7 @@ public class ToggleableReceiver implements IToggleable {
      */
     @Override
     public void toggleContrastOn() {
-        System.out.println("high contrast turned on");
+        ActivityTracker.getApplicationScenes().applyStylesheet("contrast", "contrast-dark.css");
     }
 
     /**
@@ -18,7 +20,7 @@ public class ToggleableReceiver implements IToggleable {
      */
     @Override
     public void toggleContrastOff() {
-        System.out.println("high contrast turned off");
+        ActivityTracker.getApplicationScenes().removeStylesheet("contrast", "contrast-dark.css");
     }
 
     /**

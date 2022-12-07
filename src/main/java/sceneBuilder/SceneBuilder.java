@@ -1,45 +1,48 @@
 package sceneBuilder;
 
 import application.ActivityTracker;
-import frame.Frame;
-import javafx.fxml.FXML;
+import frame.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class SceneBuilder {
 
-    @FXML
-    private Pane root;
+    private final ApplicationScenes applicationScenes;
 
-    public SceneBuilder(Pane root) {
-        this.root = root;
-    }
-    /**
-     * FXML initialize method does not work for some reason :)
-     * @return the stage
-     */
-    private Stage loadStage() {
-        return (Stage) root.getScene().getWindow();
-    }
+    protected SceneBuilder(ApplicationScenes applicationScenes) {
+        this.applicationScenes = applicationScenes;
+    };
 
     /**
-     * Displays a frame
-     * @param frame the frame to display
-     * @throws IOException buildScene load error
+     * Creates a scene
+     * @param frame the frame type to build
+     * @param length the length of the frame in pixels
+     * @param width the width of the frame in pixels
+     * @return the built scene
+     * @throws IOException load error
      */
-    public void showScene(Frame frame) throws IOException {
-        buildScene(loadStage(), frame);
-    }
-
-    public static void buildScene(Stage stage, Frame frame) throws IOException {
+    private Scene buildScene(Frame frame, int length, int width) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ActivityTracker.class.getResource(frame.getFXML()));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        scene.getStylesheets().add("stylesheets/default.css");
-        stage.setScene(scene);
-        stage.show();
+        return new Scene(fxmlLoader.load(), length, width);
     }
+
+    /**
+     * Builds all the application scenes.
+     * @throws IOException load error
+     */
+    public void buildScenes() throws IOException {
+        StartFrame startFrame = new StartFrame();
+        SettingsFrame settingsFrame = new SettingsFrame();
+        ChecklistFrame checklistFrame = new ChecklistFrame();
+        CreateFrame createFrame = new CreateFrame();
+        ChartFrame chartFrame = new ChartFrame();
+        applicationScenes.addScene(startFrame.getFXML(), buildScene(new StartFrame(), 1200, 800));
+        applicationScenes.addScene(settingsFrame.getFXML(), buildScene(new SettingsFrame(), 1200, 800));
+        applicationScenes.addScene(checklistFrame.getFXML(), buildScene(new ChecklistFrame(), 1200, 800));
+        applicationScenes.addScene(createFrame.getFXML(), buildScene(new CreateFrame(), 1200, 800));
+        applicationScenes.addScene(chartFrame.getFXML(), buildScene(new ChartFrame(), 480, 360));
+    }
+
 }
