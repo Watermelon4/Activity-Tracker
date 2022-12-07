@@ -18,14 +18,12 @@ import java.util.*;
  */
 public class ConcreteMediator implements Mediator {
 
-    private HashMap<String, Integer> visualizationData;
+    private final FileManager fm = FileManager.getInstance();
 
     /**
      * Initialize the instance attributes.
      */
-    public ConcreteMediator() {
-        this.visualizationData = new HashMap<>();
-    }
+    public ConcreteMediator() {}
 
     /**
      * Depending on the type of Component that is passed, call the appropriate method.
@@ -47,7 +45,7 @@ public class ConcreteMediator implements Mediator {
      */
     private void reactOnA(Component checklistName) {
         ChecklistName checklistNameCasted = (ChecklistName) checklistName;
-        FileManager.initNewChecklist(checklistNameCasted.getChecklistName());
+        fm.initNewChecklist(checklistNameCasted.getChecklistName());
     }
 
     /**
@@ -57,7 +55,7 @@ public class ConcreteMediator implements Mediator {
      */
     private void reactOnB(Component listOfHabits) {
         ListOfHabits listOfHabitsCasted = (ListOfHabits) listOfHabits;
-        FileManager.finishNewChecklist(listOfHabitsCasted.getListOfHabits());
+        fm.finishNewChecklist(listOfHabitsCasted.getListOfHabits());
     }
 
     /**
@@ -67,7 +65,7 @@ public class ConcreteMediator implements Mediator {
      */
     private void reactOnC(Component checkedHabits) {
         CheckedHabits checkedHabitsCasted = (CheckedHabits) checkedHabits;
-        FileManager.updateExistingChecklist(checkedHabitsCasted.getCheckedOffHabits());
+        fm.updateExistingChecklist(checkedHabitsCasted.getCheckedOffHabits());
     }
 
     /**
