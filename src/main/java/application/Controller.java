@@ -15,6 +15,9 @@ public class Controller {
     private ToggleableInvoker toggleInvoker;
 
     @FXML
+    private ComboBox fontComboBox;
+
+    @FXML
     public void initialize() {
         // create receiver
         IClickableFrame frameReceiver = new ClickableFrameReceiver();
@@ -81,6 +84,17 @@ public class Controller {
      */
     public void toggleContrast() {
         toggleInvoker.toggle();
+    }
+
+    public void pickFontSize() {
+        String fontSize = (String) fontComboBox.getValue();
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        switch (fontSize) { // cases not robust
+            case "12px" -> applicationScenes.applyStylesheet("font-size", "font-12.css");
+            case "18px" -> applicationScenes.applyStylesheet("font-size", "font-18.css");
+            case "24px" -> applicationScenes.applyStylesheet("font-size", "font-24.css");
+            case "36px" -> applicationScenes.applyStylesheet("font-size", "font-36.css");
+        }
     }
 
 }
