@@ -1,10 +1,9 @@
 package database;
 
-import mediator.Components.ListOfHabits;
-
 import java.io.File;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 /**
@@ -15,9 +14,13 @@ import java.util.*;
  */
 public final class FileManager implements Serializable {
 
-    private static CurrentChecklist currChecklist;
+    private static final FileManager INSTANCE = new FileManager();
+    private CurrentChecklist currChecklist;
 
-    public FileManager() {
+    private FileManager() {}
+
+    public static FileManager getInstance() {
+        return INSTANCE;
     }
 
     /**
@@ -25,7 +28,7 @@ public final class FileManager implements Serializable {
      *
      * @param checklistName String
      */
-    public static void initNewChecklist(String checklistName) {
+    public void initNewChecklist(String checklistName) {
         currChecklist = new CurrentChecklist(checklistName);
     }
 
@@ -34,13 +37,13 @@ public final class FileManager implements Serializable {
      *
      * @param listOfHabits ArrayList [String]
      */
-    public static void finishNewChecklist(ArrayList<String> listOfHabits) {
+    public void finishNewChecklist(ArrayList<String> listOfHabits) {
         for (String habit: listOfHabits) {
             currChecklist.getHabitCounts().put(habit, 0);
         }
     }
 
-    public static void updateExistingChecklist(ArrayList<String> checkedOffHabits) {
+    public void updateExistingChecklist(ArrayList<String> checkedOffHabits) {
         int penalty = currChecklist.penaltyCalculator();
         HashMap<String, Integer> habitCounts = currChecklist.getHabitCounts();
 
@@ -66,7 +69,7 @@ public final class FileManager implements Serializable {
      *
      * @param filename File
      */
-    public static void loadFile(File filename) {
+    public void loadFile(File filename) {
         throw new UnsupportedOperationException();
     }
 
@@ -75,7 +78,7 @@ public final class FileManager implements Serializable {
      *
      * @param filename File
      */
-    public static void deleteFile(File filename) {
+    public void deleteFile(File filename) {
         throw new UnsupportedOperationException();
     }
 
@@ -84,7 +87,7 @@ public final class FileManager implements Serializable {
      *
      * @return HashMap [String: Integer]
      */
-    public HashMap<String, Integer> getHabitCounts() {
+    public HashMap<String, Integer> getCurrChecklist() {
         return currChecklist.getHabitCounts();
     }
 

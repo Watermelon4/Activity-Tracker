@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ChecklistController">
+<AnchorPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
       <GridPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -25,7 +25,8 @@
               </rowConstraints>
                <children>
                   <Label alignment="CENTER" text="Daily Checklist" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                  <Button mnemonicParsing="false" text="Settings" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="TOP" />
+                  <Button mnemonicParsing="false" onAction="#showSettings" text="Settings" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="TOP" />
+                  <Button mnemonicParsing="false" onAction="#showPrevious" text="Back" GridPane.halignment="LEFT" GridPane.valignment="TOP" />
                </children>
             </GridPane>
             <GridPane GridPane.rowIndex="1">
@@ -53,7 +54,7 @@
                    <CheckBox mnemonicParsing="false" text="Habit Placeholder 5" GridPane.rowIndex="5" />
                    <CheckBox mnemonicParsing="false" text="Habit Placeholder 6" GridPane.rowIndex="6" />
                    <CheckBox mnemonicParsing="false" text="Habit Placeholder 7" GridPane.rowIndex="7" />
-                  <Button mnemonicParsing="false" text="Save" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                  <Button mnemonicParsing="false" onAction="#showChart" text="Save" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
                </children>
             </GridPane>
          </children>

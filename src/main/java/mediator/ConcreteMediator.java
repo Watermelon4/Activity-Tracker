@@ -2,12 +2,9 @@ package mediator;
 
 import database.FileManager;
 import mediator.Components.CheckedHabits;
-import mediator.Components.Component;
 import mediator.Components.ChecklistName;
+import mediator.Components.Component;
 import mediator.Components.ListOfHabits;
-
-import java.io.File;
-import java.util.*;
 
 
 /**
@@ -17,6 +14,8 @@ import java.util.*;
  *
  */
 public class ConcreteMediator implements Mediator {
+
+    private final FileManager fm = FileManager.getInstance();
 
     /**
      * Initialize the instance attributes.
@@ -43,7 +42,7 @@ public class ConcreteMediator implements Mediator {
      */
     private void reactOnA(Component checklistName) {
         ChecklistName checklistNameCasted = (ChecklistName) checklistName;
-        FileManager.initNewChecklist(checklistNameCasted.getChecklistName());
+        fm.initNewChecklist(checklistNameCasted.getChecklistName());
     }
 
     /**
@@ -53,7 +52,7 @@ public class ConcreteMediator implements Mediator {
      */
     private void reactOnB(Component listOfHabits) {
         ListOfHabits listOfHabitsCasted = (ListOfHabits) listOfHabits;
-        FileManager.finishNewChecklist(listOfHabitsCasted.getListOfHabits());
+        fm.finishNewChecklist(listOfHabitsCasted.getListOfHabits());
     }
 
     /**
@@ -63,7 +62,7 @@ public class ConcreteMediator implements Mediator {
      */
     private void reactOnC(Component checkedHabits) {
         CheckedHabits checkedHabitsCasted = (CheckedHabits) checkedHabits;
-        FileManager.updateExistingChecklist(checkedHabitsCasted.getCheckedOffHabits());
+        fm.updateExistingChecklist(checkedHabitsCasted.getCheckedOffHabits());
     }
 
     /**

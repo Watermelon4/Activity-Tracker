@@ -1,7 +1,5 @@
 package frame;
 
-import observer.FrameStyle;
-
 /**
  * The class for containing all the information to display a frame in the application.
  */
@@ -13,17 +11,19 @@ public class Frame {
     String fxmlName;
 
     /**
-     * The next frame that will be displayed when the user proceeds.
+     * Constructor for the Frame class.
+     * @param fxmlName the name of the fxml file "example.fxml"
      */
-    Frame nextFrame;
+    public Frame(String fxmlName) {
+        this.fxmlName = fxmlName;
+    }
 
     /**
-     * The frame that leads to the current frame.
+     * Returns the name of the FXML file for this frame.
+     * @return the fxml file name
      */
-    Frame previousFrame;
+    public String getFXML() {
+        return fxmlName;
+    }
 
-    /**
-     * The style manager for this frame.
-     */
-    FrameStyle frameStyle;
 }

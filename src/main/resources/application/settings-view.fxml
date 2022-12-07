@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SettingsController">
+<AnchorPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
       <GridPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -25,7 +27,7 @@
               </rowConstraints>
                <children>
                   <Label alignment="CENTER" text="Settings" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="TOP" />
+                  <Button mnemonicParsing="false" onAction="#showPrevious" text="Back" GridPane.halignment="LEFT" GridPane.valignment="TOP" />
                </children>
             </GridPane>
             <GridPane GridPane.rowIndex="1">
@@ -42,8 +44,17 @@
                   <Label text="Font Size" />
                   <Label text="High Contrast" GridPane.rowIndex="1" />
                   <Label text="Night Mode" GridPane.rowIndex="2" />
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="1" />
-                  <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox onAction="#pickFont" prefWidth="280.0" promptText="12px/18px" GridPane.columnIndex="1">
+                   <items>
+                       <FXCollections fx:factory="observableArrayList">
+                           <String fx:id="12px" fx:value="12px/18px" />
+                           <String fx:id="18px" fx:value="18px/24px" />
+                           <String fx:id="24px" fx:value="24px/36px" />
+                           <String fx:id="36px" fx:value="36px/48px" />
+                       </FXCollections>
+                   </items>
+                  </ComboBox>
+                  <RadioButton mnemonicParsing="false" onAction="#toggleContrast" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
