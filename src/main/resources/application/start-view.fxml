@@ -52,7 +52,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button mnemonicParsing="false" text="List 1" />
+                        <Button mnemonicParsing="false" onAction="#showChecklist" text="List 1" />
                         <Button mnemonicParsing="false" onAction="#showChecklist" text="Load" GridPane.columnIndex="1" />
                         <Button mnemonicParsing="false" text="Delete" GridPane.columnIndex="2" />
                      </children>

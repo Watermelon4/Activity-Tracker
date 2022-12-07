@@ -73,7 +73,7 @@
                      <children>
                         <Label text="How Does it Work?" GridPane.halignment="CENTER" />
                         <Label text="Add up to 7 habits to track daily and solidify that habit by getting to 21 days. Be careful, when you miss a day you will lose a day of progress!" wrapText="true" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" text="Create Checklist" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" onAction="#showChecklist" text="Create Checklist" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children>
