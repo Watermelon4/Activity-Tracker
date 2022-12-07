@@ -1,19 +1,17 @@
 package application;
 
-import database.FileManager;
-import frame.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sceneBuilder.ApplicationScenes;
 
 import java.io.IOException;
-import java.util.HashMap;
 
-import static sceneBuilder.SceneBuilder.buildScene;
 
 public class ActivityTracker extends Application {
 
+    public static ApplicationScenes applicationScenes;
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -30,12 +28,17 @@ public class ActivityTracker extends Application {
     // Added by GEORGE
     // =================
     stage.setTitle("Activity Tracker");
-    buildScene(stage, new StartFrame(), 1200, 800);
-
+    ApplicationScenes applicationScenes = new ApplicationScenes(stage);
+    applicationScenes.showScene("start-view.fxml");
+    this.applicationScenes = applicationScenes;
     }
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public static ApplicationScenes getApplicationScenes() {
+        return applicationScenes;
     }
 
 }

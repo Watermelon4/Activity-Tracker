@@ -1,10 +1,7 @@
 package command.frame;
 
-import frame.*;
-import sceneBuilder.SceneBuilder;
-import javafx.scene.layout.Pane;
-
-import java.io.IOException;
+import application.ActivityTracker;
+import sceneBuilder.ApplicationScenes;
 
 /**
  * The receiver class for clickable.
@@ -15,42 +12,45 @@ public class ClickableFrameReceiver implements IClickableFrame {
      * {@inheritDoc}
      */
     @Override
-    public void clickChecklistFrame(Pane root) throws IOException {
-        SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new ChecklistFrame(), 1200, 800);
+    public void clickChecklistFrame() {
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        applicationScenes.showScene("checklist-view.fxml");
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void clickCreateFrame(Pane root) throws IOException {
-        SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new CreateFrame(), 1200, 800);
+    public void clickCreateFrame() {
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        applicationScenes.showScene("create-view.fxml");
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void clickSettingsFrame(Pane root) throws IOException {
-        SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new SettingsFrame(), 1200, 800);
+    public void clickSettingsFrame() {
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        applicationScenes.showScene("settings-view.fxml");
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void clickStartFrame(Pane root) throws IOException {
-        SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new StartFrame(), 1200, 800);
+    public void clickStartFrame() {
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        applicationScenes.showScene("start-view.fxml");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public void clickChartFrame(Pane root) throws IOException {
-        SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new ChartFrame(), 480, 360);
+    public void clickChartFrame() {
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        applicationScenes.showScene("ViewChart.fxml");
     }
 
 }
