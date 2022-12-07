@@ -1,21 +1,19 @@
 package application;
 
+import frame.*;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static sceneBuilder.SceneBuilder.buildScene;
+
 public class ActivityTracker extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ActivityTracker.class.getResource("checklist-create-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        // scene.getStylesheets().add("stylesheets/start-view.css");
         stage.setTitle("Activity Tracker");
-        stage.setScene(scene);
-        stage.show();
+        buildScene(stage, new StartFrame());
     }
 
     public static void main(String[] args) {
