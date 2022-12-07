@@ -7,9 +7,30 @@
 }
 
 .button:hover {
-    -fx-border-color: floralwhite;
+    -fx-border-color: yellow;
+    -fx-border-width: 8px;
 }
 
 .check-box {
     -fx-text-fill: floralwhite;
+}
+
+.check-box:hover {
+    -fx-border-color: yellow;
+    -fx-border-width: 8px;
+}
+
+.text-field:hover {
+    -fx-border-color: yellow;
+    -fx-border-width: 8px;
+}
+
+.radio-button:hover {
+    -fx-border-color: yellow;
+    -fx-border-width: 8px;
+}
+
+*:focused {
+    -fx-border-color: aqua;
+    -fx-border-width: 8px;
 }
