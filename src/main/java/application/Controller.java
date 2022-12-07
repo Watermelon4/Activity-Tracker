@@ -3,6 +3,7 @@ package application;
 import command.*;
 import command.frame.*;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
 import sceneBuilder.ApplicationScenes;
 
@@ -12,12 +13,6 @@ public class Controller {
     private ClickableFrameInvoker frameInvoker;
 
     private ToggleableInvoker toggleInvoker;
-
-    /**
-     * The root AnchorPane
-     */
-    @FXML
-    private Pane root;
 
     @FXML
     public void initialize() {
