@@ -6,12 +6,8 @@ import database.FileManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import mediator.Components.CheckedHabits;
 import mediator.Components.NewChecklist;
-import javafx.scene.control.ComboBox;
-import javafx.scene.layout.Pane;
-import sceneBuilder.ApplicationScenes;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -216,6 +212,7 @@ public class Controller {
 
     private void print(Object o) {
         System.out.println(o);
+    }
 
     /**
      * Toggles high contrast mode.
