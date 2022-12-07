@@ -1,6 +1,8 @@
 package mediator.Components;
 
-import java.util.*;
+import mediator.ConcreteMediator;
+
+import java.util.ArrayList;
 
 /**
  * MEDIATOR PATTERN<br>
@@ -13,29 +15,30 @@ import java.util.*;
  */
 public class CheckedHabits extends Component {
 
-    private ArrayList<String> checkedOffHabits;
+    private ArrayList<Integer> checkedOffHabits;
 
     /**
      * Initialize instance attribute.
      */
-    public CheckedHabits() {
-        this.checkedOffHabits = new ArrayList<>();
-        this.componentType = "C";
+    public CheckedHabits(ArrayList<Integer> checkedOffHabits) {
+        this.checkedOffHabits = checkedOffHabits;
+        this.componentType = "B";
+        this.dialog = new ConcreteMediator();
     }
 
     /**
      * Listen for user input from GUI and communicate with Mediator accordingly.
      */
     public void userInputListener() {
-        // Build the list of CheckedOffHabits before calling dialog.execute
-        // ================================================================
-        // TODO: This depends on how the corresponding scene is implemented!
-        // ================================================================
         dialog.execute(this);
     }
 
-    public ArrayList<String> getCheckedOffHabits() {
+    public ArrayList<Integer> getCheckedOffHabits() {
         return checkedOffHabits;
+    }
+
+    private void print(Object o) {
+        System.out.println(o);
     }
 
 }

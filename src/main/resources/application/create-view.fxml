@@ -26,7 +26,7 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#showSettings" text="Settings" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="TOP" />
                   <Button mnemonicParsing="false" onAction="#showPrevious" text="Back" GridPane.halignment="LEFT" GridPane.valignment="TOP" />
-                  <TextField promptText="Checklist Name" GridPane.columnIndex="1" />
+                  <TextField promptText="Checklist Name" GridPane.columnIndex="1" fx:id="tf_checklistName"/>
                </children>
             </GridPane>
             <GridPane GridPane.rowIndex="1">
@@ -52,13 +52,13 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextField promptText="Habit 1" />
-                        <TextField promptText="Habit 2" GridPane.rowIndex="1" />
-                        <TextField promptText="Habit 3" GridPane.rowIndex="2" />
-                        <TextField promptText="Habit 4" GridPane.rowIndex="3" />
-                        <TextField promptText="Habit 5" GridPane.rowIndex="4" />
-                        <TextField promptText="Habit 6" GridPane.rowIndex="5" />
-                        <TextField promptText="Habit 7" GridPane.rowIndex="6" />
+                        <TextField promptText="Habit 1" fx:id="tf_habit_1"/>
+                        <TextField promptText="Habit 2" GridPane.rowIndex="1" fx:id="tf_habit_2"/>
+                        <TextField promptText="Habit 3" GridPane.rowIndex="2" fx:id="tf_habit_3"/>
+                        <TextField promptText="Habit 4" GridPane.rowIndex="3" fx:id="tf_habit_4"/>
+                        <TextField promptText="Habit 5" GridPane.rowIndex="4" fx:id="tf_habit_5"/>
+                        <TextField promptText="Habit 6" GridPane.rowIndex="5" fx:id="tf_habit_6"/>
+                        <TextField promptText="Habit 7" GridPane.rowIndex="6" fx:id="tf_habit_7"/>
                      </children>
                   </GridPane>
                   <GridPane>
@@ -73,7 +73,7 @@
                      <children>
                         <Label text="How Does it Work?" GridPane.halignment="CENTER" />
                         <Label text="Add up to 7 habits to track daily and solidify that habit by getting to 21 days. Be careful, when you miss a day you will lose a day of progress!" wrapText="true" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" onAction="#showChecklist" text="Create Checklist" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" onAction="#userInputListener_01" text="Create Checklist" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children>

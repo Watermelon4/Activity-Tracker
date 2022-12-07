@@ -1,6 +1,8 @@
 package mediator.Components;
 
-import java.util.*;
+import mediator.ConcreteMediator;
+
+import java.util.ArrayList;
 
 /**
  * MEDIATOR PATTERN<br>
@@ -8,25 +10,25 @@ import java.util.*;
  * This component records the name of the new to-be-created checklist.
  * It also communicates with Mediator interface.
  */
-public class ChecklistName extends Component {
+public class NewChecklist extends Component {
 
     private String checklistName;
+    private ArrayList<String> habitList;
 
     /**
      * Initialize instance attribute.
      */
-    public ChecklistName() {
-        this.checklistName = "";
+    public NewChecklist(String name, ArrayList<String> habitList) {
+        this.checklistName = name;
+        this.habitList = habitList;
         this.componentType = "A";
+        this.dialog = new ConcreteMediator();
     }
 
-    /** //TODO: This depends on how the corresponding scene is implemented!
+    /**
      * Listen for user input from GUI and communicate with Mediator accordingly.
      */
     public void userInputListener() {
-        //
-        //TODO: Insert code to "LISTEN" to user text input from GUI & update attribute checklistName
-        //
         dialog.execute(this);
     }
 
@@ -36,6 +38,14 @@ public class ChecklistName extends Component {
      */
     public String getChecklistName() {
         return checklistName;
+    }
+
+    /**
+     * Getter method for habitList.
+     * @return String
+     */
+    public ArrayList<String> getHabitList() {
+        return habitList;
     }
 
 }
