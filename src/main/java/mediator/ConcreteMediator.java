@@ -2,12 +2,9 @@ package mediator;
 
 import database.FileManager;
 import mediator.Components.CheckedHabits;
-import mediator.Components.Component;
 import mediator.Components.ChecklistName;
+import mediator.Components.Component;
 import mediator.Components.ListOfHabits;
-
-import java.io.File;
-import java.util.*;
 
 
 /**
