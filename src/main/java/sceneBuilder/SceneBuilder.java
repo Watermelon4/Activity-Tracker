@@ -1,7 +1,10 @@
 package sceneBuilder;
 
+import application.ActivityTracker;
 import frame.Frame;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -29,6 +32,14 @@ public class SceneBuilder {
      * @throws IOException buildScene load error
      */
     public void showScene(Frame frame) throws IOException {
-        application.ActivityTracker.buildScene(loadStage(), frame);
+        buildScene(loadStage(), frame);
+    }
+
+    public static void buildScene(Stage stage, Frame frame) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(ActivityTracker.class.getResource(frame.getFXML()));
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        scene.getStylesheets().add("stylesheets/default.css");
+        stage.setScene(scene);
+        stage.show();
     }
 }
