@@ -119,19 +119,19 @@ public class Controller {
 
         ArrayList<String> habitList = new ArrayList<>();
         if (!tf_habit_1.getText().equals("")) {habitList.add(tf_habit_1.getText());
-        } else habitList.add("n/a");
+        } else habitList.add("_______");
         if (!tf_habit_2.getText().equals("")) {habitList.add(tf_habit_2.getText());
-        } else habitList.add("n/a");
+        } else habitList.add("_______");
         if (!tf_habit_3.getText().equals("")) {habitList.add(tf_habit_3.getText());
-        } else habitList.add("n/a");
+        } else habitList.add("_______");
         if (!tf_habit_4.getText().equals("")) {habitList.add(tf_habit_4.getText());
-        } else habitList.add("n/a");
+        } else habitList.add("_______");
         if (!tf_habit_5.getText().equals("")) {habitList.add(tf_habit_5.getText());
-        } else habitList.add("n/a");
+        } else habitList.add("_______");
         if (!tf_habit_6.getText().equals("")) {habitList.add(tf_habit_6.getText());
-        } else habitList.add("n/a");
+        } else habitList.add("_______");
         if (!tf_habit_7.getText().equals("")) {habitList.add(tf_habit_7.getText());
-        } else habitList.add("n/a");
+        } else habitList.add("_______");
 
         currChecklistName = tf_checklistName.getText();
 
@@ -140,19 +140,19 @@ public class Controller {
 
         String filename = newChecklist.getChecklistName() + ".ser";
         loadChecklist(filename);
-
-        System.out.println(habitList.get(0));
-        System.out.println(habitList.get(1));
-        System.out.println(habitList.get(2));
-        System.out.println(habitList.get(3));
-        System.out.println(habitList.get(4));
-        System.out.println(habitList.get(5));
-        System.out.println(habitList.get(6));
 //        File f = new File("savefiles//" + filename);
 //        f.delete();
 
         // switch scene
         showChecklist();
+        print("Name of Checklist: " + FileManager.getInstance().getChecklistName());
+        print("Habit #1: " + FileManager.getInstance().getListOfHabits().get(0));
+        print("Habit #2: " + FileManager.getInstance().getListOfHabits().get(1));
+        print("Habit #3: " + FileManager.getInstance().getListOfHabits().get(2));
+        print("Habit #4: " + FileManager.getInstance().getListOfHabits().get(3));
+        print("Habit #5: " + FileManager.getInstance().getListOfHabits().get(4));
+        print("Habit #6: " + FileManager.getInstance().getListOfHabits().get(5));
+        print("Habit #7: " + FileManager.getInstance().getListOfHabits().get(6));
 
     }
 
@@ -184,28 +184,24 @@ public class Controller {
 
     public void userInputListener_02() throws IOException{
 
-        ArrayList<Integer> bruh = new ArrayList<>();
-        if (cb_1.isSelected()) {bruh.add(1);} else {bruh.add(0);}
-        if (cb_2.isSelected()) {bruh.add(1);} else {bruh.add(0);}
-        if (cb_3.isSelected()) {bruh.add(1);} else {bruh.add(0);}
-        if (cb_4.isSelected()) {bruh.add(1);} else {bruh.add(0);}
-        if (cb_5.isSelected()) {bruh.add(1);} else {bruh.add(0);}
-        if (cb_6.isSelected()) {bruh.add(1);} else {bruh.add(0);}
-        if (cb_7.isSelected()) {bruh.add(1);} else {bruh.add(0);}
+        ArrayList<String> hl = FileManager.getInstance().getListOfHabits();
 
-//        if (cb_2.isSelected()) bruh.add(cb_2.getText());
-//        if (cb_3.isSelected()) bruh.add(cb_3.getText());
-//        if (cb_4.isSelected()) bruh.add(cb_4.getText());
-//        if (cb_5.isSelected()) bruh.add(cb_5.getText());
-//        if (cb_6.isSelected()) bruh.add(cb_6.getText());
-//        if (cb_7.isSelected()) bruh.add(cb_7.getText());
+        ArrayList<Integer> bruh = new ArrayList<>();
+        print("===========================================================");
+        if (cb_1.isSelected()) {bruh.add(1); print("The habit \"" + hl.get(0) + "\" PASSED. Nice!");} else {bruh.add(0); print("The habit \"" + hl.get(0) + "\" was skipped today. Bruh");}
+        if (cb_2.isSelected()) {bruh.add(1); print("The habit \"" + hl.get(1) + "\" PASSED. Nice!");} else {bruh.add(0); print("The habit \"" + hl.get(1) + "\" was skipped today. Bruh");}
+        if (cb_3.isSelected()) {bruh.add(1); print("The habit \"" + hl.get(2) + "\" PASSED. Nice!");} else {bruh.add(0); print("The habit \"" + hl.get(2) + "\" was skipped today. Bruh");}
+        if (cb_4.isSelected()) {bruh.add(1); print("The habit \"" + hl.get(3) + "\" PASSED. Nice!");} else {bruh.add(0); print("The habit \"" + hl.get(3) + "\" was skipped today. Bruh");}
+        if (cb_5.isSelected()) {bruh.add(1); print("The habit \"" + hl.get(4) + "\" PASSED. Nice!");} else {bruh.add(0); print("The habit \"" + hl.get(4) + "\" was skipped today. Bruh");}
+        if (cb_6.isSelected()) {bruh.add(1); print("The habit \"" + hl.get(5) + "\" PASSED. Nice!");} else {bruh.add(0); print("The habit \"" + hl.get(5) + "\" was skipped today. Bruh");}
+        if (cb_7.isSelected()) {bruh.add(1); print("The habit \"" + hl.get(6) + "\" PASSED. Nice!");} else {bruh.add(0); print("The habit \"" + hl.get(6) + "\" was skipped today. Bruh");}
 
         CheckedHabits checkedHabits = new CheckedHabits(bruh);
         checkedHabits.userInputListener();
 
+
         showChart();
 
-        print(FileManager.getInstance().getChecklistName() + " at Controller");
 
     }
 

@@ -1,9 +1,8 @@
 package mediator.Components;
 
-import database.FileManager;
 import mediator.ConcreteMediator;
 
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * MEDIATOR PATTERN<br>
@@ -31,7 +30,6 @@ public class CheckedHabits extends Component {
      * Listen for user input from GUI and communicate with Mediator accordingly.
      */
     public void userInputListener() {
-        print(FileManager.getInstance().getChecklistName() + " at CheckedHabit");
         dialog.execute(this);
     }
 

@@ -73,8 +73,6 @@ public final class FileManager implements Serializable {
         // save .ser
         File fileNameInput = new File("savefiles//" + filename + ".ser");
         currChecklist.saveChecklist(fileNameInput);
-
-        print(FileManager.getInstance().getChecklistName() + " at FM after save");
     }
 
     /** //TODO: This depends on how the corresponding scene is implemented!
