@@ -3,6 +3,8 @@ package application;
 import command.*;
 import command.frame.*;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
@@ -10,6 +12,38 @@ public class Controller {
     private ClickableFrameInvoker frameInvoker;
 
     private ToggleableInvoker toggleInvoker;
+
+    @FXML
+    public CheckBox cb_1;
+    @FXML
+    public CheckBox cb_2;
+    @FXML
+    public CheckBox cb_3;
+    @FXML
+    public CheckBox cb_4;
+    @FXML
+    public CheckBox cb_5;
+    @FXML
+    public CheckBox cb_6;
+    @FXML
+    public CheckBox cb_7;
+
+    @FXML
+    public TextField tf_checklistName;
+    @FXML
+    public TextField tf_habit_1;
+    @FXML
+    public TextField tf_habit_2;
+    @FXML
+    public TextField tf_habit_3;
+    @FXML
+    public TextField tf_habit_4;
+    @FXML
+    public TextField tf_habit_5;
+    @FXML
+    public TextField tf_habit_6;
+    @FXML
+    public TextField tf_habit_7;
 
     @FXML
     public void initialize() {
