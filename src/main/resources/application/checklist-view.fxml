@@ -54,7 +54,7 @@
                    <CheckBox mnemonicParsing="false" text="Habit Placeholder 5" GridPane.rowIndex="5" />
                    <CheckBox mnemonicParsing="false" text="Habit Placeholder 6" GridPane.rowIndex="6" />
                    <CheckBox mnemonicParsing="false" text="Habit Placeholder 7" GridPane.rowIndex="7" />
-                  <Button mnemonicParsing="false" text="Save" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                  <Button mnemonicParsing="false" onAction="#showChart" text="Save" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
                </children>
             </GridPane>
          </children>

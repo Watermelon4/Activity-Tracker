@@ -29,4 +29,9 @@ public interface IClickableFrame {
      */
     void clickStartFrame(Pane root) throws IOException;
 
+    /**
+     * Builds and displays the start frame.
+     */
+    void clickChartFrame(Pane root) throws IOException;
+
 }

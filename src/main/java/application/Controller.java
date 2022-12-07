@@ -26,9 +26,10 @@ public class Controller {
         IFrameCommand clickCreateCommand = new ClickCreateFrame(frameReceiver, root);
         IFrameCommand clickChecklistCommand = new ClickChecklistFrame(frameReceiver, root);
         IFrameCommand clickStartCommand = new ClickStartFrame(frameReceiver, root);
+        IFrameCommand clickChartCommand = new ClickChartFrame(frameReceiver, root);
 
         // Pass instances of the Command objects to the invoker
-        this.frameInvoker = new ClickableFrameInvoker(clickSettingsCommand, clickCreateCommand, clickChecklistCommand, clickStartCommand);
+        this.frameInvoker = new ClickableFrameInvoker(clickSettingsCommand, clickCreateCommand, clickChecklistCommand, clickStartCommand, clickChartCommand);
     }
 
     /**
@@ -54,6 +55,14 @@ public class Controller {
      */
     public void showSettings() throws IOException {
         frameInvoker.clickSettings();
+    }
+
+    /**
+     * Displays the chart frame.
+     * @throws IOException buildScene load error
+     */
+    public void showChart() throws IOException {
+        frameInvoker.clickChart();
     }
 
     /**
