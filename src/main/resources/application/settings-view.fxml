@@ -44,13 +44,13 @@
                   <Label text="Font Size" />
                   <Label text="High Contrast" GridPane.rowIndex="1" />
                   <Label text="Night Mode" GridPane.rowIndex="2" />
-                  <ComboBox prefWidth="280.0" promptText="12px/18px" GridPane.columnIndex="1">
+                  <ComboBox fx:id="fontComboBox" onAction="#pickFontSize" prefWidth="280.0" promptText="12px" GridPane.columnIndex="1">
                    <items>
                        <FXCollections fx:factory="observableArrayList">
-                           <String fx:id="12px" fx:value="12px/18px" />
-                           <String fx:id="18px" fx:value="18px/24px" />
-                           <String fx:id="24px" fx:value="24px/36px" />
-                           <String fx:id="36px" fx:value="36px/48px" />
+                           <String fx:id="12px" fx:value="12px" />
+                           <String fx:id="18px" fx:value="18px" />
+                           <String fx:id="24px" fx:value="24px" />
+                           <String fx:id="36px" fx:value="36px" />
                        </FXCollections>
                    </items>
                   </ComboBox>
