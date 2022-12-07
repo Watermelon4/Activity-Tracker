@@ -5,10 +5,12 @@ import command.frame.*;
 import database.FileManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 import mediator.Components.CheckedHabits;
 import mediator.Components.NewChecklist;
+import sceneBuilder.ApplicationScenes;
 
 import java.io.*;
 import java.util.ArrayList;

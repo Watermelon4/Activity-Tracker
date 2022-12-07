@@ -38,7 +38,3 @@
     -fx-border-color: yellow;
     -fx-border-width: 8px;
 }
-
-.combo-box > *:hover {
-    -fx-border-color: aqua;
-}
