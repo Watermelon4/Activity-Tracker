@@ -1,10 +1,14 @@
 package application;
 
+import database.FileManager;
 import frame.*;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import static sceneBuilder.SceneBuilder.buildScene;
 
@@ -15,8 +19,8 @@ public class ActivityTracker extends Application {
 
     // Added by DANNY
     // =================
-    FileManager fm = FileManager.getInstance();
-    HashMap<String, Integer> dataForVisuals = fm.getCurrChecklist();
+    // FileManager fm = FileManager.getInstance();
+    // HashMap<String, Integer> dataForVisuals = fm.getCurrChecklist();
 
     // Added by NUGO
     // =================

@@ -1,10 +1,7 @@
 package command.frame;
 
+import frame.*;
 import sceneBuilder.SceneBuilder;
-import frame.ChecklistFrame;
-import frame.CreateFrame;
-import frame.SettingsFrame;
-import frame.StartFrame;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
@@ -48,6 +45,12 @@ public class ClickableFrameReceiver implements IClickableFrame {
     public void clickStartFrame(Pane root) throws IOException {
         SceneBuilder builder = new SceneBuilder(root);
         builder.showScene(new StartFrame());
+    }
+
+    @Override
+    public void clickChartFrame(Pane root) throws IOException {
+        SceneBuilder builder = new SceneBuilder(root);
+        builder.showScene(new ChartFrame());
     }
 
 }

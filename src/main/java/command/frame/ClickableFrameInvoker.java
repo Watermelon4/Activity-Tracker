@@ -14,17 +14,19 @@ public class ClickableFrameInvoker {
     private final IFrameCommand clickCreateCommand;
     private final IFrameCommand clickChecklistCommand;
     private final IFrameCommand clickStartCommand;
+    private final IFrameCommand clickChartCommand;
 
     private Stack<String> frameStack;
 
     /**
      * Invoker class constructor for Clickable objects.
      */
-    public ClickableFrameInvoker(IFrameCommand clickSettingsCommand, IFrameCommand clickCreateCommand, IFrameCommand clickChecklistCommand, IFrameCommand clickStartCommand) {
+    public ClickableFrameInvoker(IFrameCommand clickSettingsCommand, IFrameCommand clickCreateCommand, IFrameCommand clickChecklistCommand, IFrameCommand clickStartCommand, IFrameCommand clickChartCommand) {
         this.clickSettingsCommand = clickSettingsCommand;
         this.clickCreateCommand = clickCreateCommand;
         this.clickChecklistCommand = clickChecklistCommand;
         this.clickStartCommand = clickStartCommand;
+        this.clickChartCommand = clickChartCommand;
         this.frameStack = new Stack<String>();
         frameStack.push("start-view.fxml"); // not robust, replace later
     }
@@ -70,6 +72,11 @@ public class ClickableFrameInvoker {
             case "checklist-view.fxml" -> clickChecklist();
             case "start-view.fxml" -> clickStart();
         }
+    }
+
+    public void clickChart() throws IOException {
+        clickChartCommand.execute();
+        frameStack.push(clickChartCommand.frameToFXML());
     }
 
     /**
