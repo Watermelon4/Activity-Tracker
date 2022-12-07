@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -42,7 +44,16 @@
                   <Label text="Font Size" />
                   <Label text="High Contrast" GridPane.rowIndex="1" />
                   <Label text="Night Mode" GridPane.rowIndex="2" />
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="1" />
+                  <ComboBox onAction="#pickFont" prefWidth="280.0" promptText="12px/18px" GridPane.columnIndex="1">
+                   <items>
+                       <FXCollections fx:factory="observableArrayList">
+                           <String fx:id="12px" fx:value="12px/18px" />
+                           <String fx:id="18px" fx:value="18px/24px" />
+                           <String fx:id="24px" fx:value="24px/36px" />
+                           <String fx:id="36px" fx:value="36px/48px" />
+                       </FXCollections>
+                   </items>
+                  </ComboBox>
                   <RadioButton mnemonicParsing="false" onAction="#toggleContrast" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
