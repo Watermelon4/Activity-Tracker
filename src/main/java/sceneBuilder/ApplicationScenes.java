@@ -72,7 +72,7 @@ public class ApplicationScenes {
      * @param stylesheet the css file name of the new stylesheet to apply
      */
     public void applyStylesheet(String type, String stylesheet) {
-       if (scenes.containsKey(type)) {  // remove old stylesheet
+       if (appliedStylesheets.containsKey(type)) {  // remove old stylesheet
            for (Scene scene : scenes.values()) {
                scene.getStylesheets().remove(PATH + appliedStylesheets.get(type));
                scene.getStylesheets().add(PATH + stylesheet);
