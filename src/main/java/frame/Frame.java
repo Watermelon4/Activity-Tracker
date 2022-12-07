@@ -1,7 +1,5 @@
 package frame;
 
-import observer.FrameStyle;
-
 /**
  * The class for containing all the information to display a frame in the application.
  */
@@ -13,17 +11,11 @@ public class Frame {
     String fxmlName;
 
     /**
-     * The style manager for this frame.
-     */
-    FrameStyle frameStyle;
-
-    /**
-     * Constructor for the Frame class. Generates a FrameStyle object.
+     * Constructor for the Frame class.
      * @param fxmlName the name of the fxml file "example.fxml"
      */
     public Frame(String fxmlName) {
         this.fxmlName = fxmlName;
-        this.frameStyle = new FrameStyle();
     }
 
     /**
@@ -34,7 +26,4 @@ public class Frame {
         return fxmlName;
     }
 
-    public FrameStyle getStyles() {
-        return this.frameStyle;
-    }
 }
