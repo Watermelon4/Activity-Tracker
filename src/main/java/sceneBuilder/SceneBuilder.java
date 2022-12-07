@@ -18,13 +18,6 @@ public class SceneBuilder {
     public SceneBuilder(Pane root) {
         this.root = root;
     }
-    /**
-     * FXML initialize method does not work for some reason :)
-     * @return the stage
-     */
-    private Stage loadStage() {
-        return (Stage) root.getScene().getWindow();
-    }
 
     /**
      * Displays a frame
@@ -37,9 +30,21 @@ public class SceneBuilder {
 
     public static void buildScene(Stage stage, Frame frame) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ActivityTracker.class.getResource(frame.getFXML()));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        scene.getStylesheets().add("stylesheets/default.css");
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        scene.getStylesheets().add(frame.getStyles().getDefault());
         stage.setScene(scene);
         stage.show();
+    }
+
+    /**
+     * FXML initialize method does not work for some reason :)
+     * @return the stage
+     */
+    private Stage loadStage() {
+        return (Stage) root.getScene().getWindow();
+    }
+
+    private void applyStylesheets(Scene scene, Frame frame) {
+
     }
 }
