@@ -11,3 +11,8 @@
 -fx-background-color: rgba(255,255,255,0.2);
 -fx-background-radius: 10;
 }
+
+.font {
+  -fx-font-family: Phosphate;
+  -fx-font-size: 16pt ;
+}

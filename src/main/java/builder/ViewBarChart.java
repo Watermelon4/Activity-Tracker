@@ -1,6 +1,6 @@
 package builder;
 
-import database.CurrentChecklist;
+
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
@@ -17,20 +17,16 @@ import java.util.HashMap;
 public class ViewBarChart implements IViewChart{
 
     private final BorderPane borderPane;
-    private final CurrentChecklist checklist;
     public  HashMap<String, Integer> dataMap;
     public  HashMap<String, Integer> tempHold;
     /**
      * ViewBarChart class constructor
      * @param borderPane1 a BorderPane
      * @param dataMap a HashMap
-     * @param checkList a HashMap
-
      */
 
-    public ViewBarChart(CurrentChecklist checkList, HashMap<String, Integer> dataMap, BorderPane borderPane1) {
-        this.checklist = checkList;
-        this.dataMap = checkList.getHabitCounts();
+    public ViewBarChart(HashMap<String, Integer> dataMap, BorderPane borderPane1) {
+        this.dataMap = dataMap;
         this.tempHold = new HashMap<String, Integer>();
         this.borderPane = borderPane1;
     }
