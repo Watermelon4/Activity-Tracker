@@ -3,9 +3,6 @@ package application;
 import command.*;
 import command.frame.*;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.layout.Pane;
-import sceneBuilder.ApplicationScenes;
 
 import java.io.IOException;
 
