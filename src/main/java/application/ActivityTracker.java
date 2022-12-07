@@ -1,5 +1,6 @@
 package application;
 
+import database.FileManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -7,6 +8,7 @@ import javafx.stage.Stage;
 import sceneBuilder.ApplicationScenes;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 
 public class ActivityTracker extends Application {
@@ -17,13 +19,14 @@ public class ActivityTracker extends Application {
 
     // Added by DANNY
     // =================
-    // FileManager fm = FileManager.getInstance();
-    // HashMap<String, Integer> dataForVisuals = fm.getCurrChecklist();
+//     FileManager fm = FileManager.getInstance();
+//     HashMap<String, Integer> dataForVisuals = fm.getCurrChecklist();
 
     // Added by NUGO
     // =================
-    FXMLLoader fxmlLoader = new FXMLLoader(ActivityTracker.class.getResource("ViewChart.fxml"));
-    Scene scene = new Scene(fxmlLoader.load(), 480, 360); //1200 x 800 for original dimensions
+//    FXMLLoader fxmlLoader = new FXMLLoader(ActivityTracker.class.getResource("ViewChart.fxml"));
+//    Scene scene = new Scene(fxmlLoader.load(), 480, 360); //1200 x 800 for original dimension
+
 
     // Added by GEORGE
     // =================

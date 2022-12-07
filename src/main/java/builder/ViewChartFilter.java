@@ -39,7 +39,7 @@ public class ViewChartFilter {
         checkComboBox = new CheckComboBox<>(filterList);
         checkComboBox.setTitle("Filter");
         checkComboBox.setStyle("-fx-font: 10 arial");
-        borderPane2.setTop(checkComboBox);
+        borderPane2.setBottom(checkComboBox);
         }
 
     /**

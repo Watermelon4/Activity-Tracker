@@ -35,7 +35,7 @@ public class ViewChartSort extends ViewChartFilter {
         choicebox = new ChoiceBox(filterList);
         choicebox.setValue("Sort");
         choicebox.setStyle("-fx-font: 10 arial");
-        borderPane2.setBottom(choicebox);
+        borderPane2.setTop(choicebox);
     }
 
     /**
