@@ -30,7 +30,7 @@ public class ActivityTracker extends Application {
     // Added by GEORGE
     // =================
     stage.setTitle("Activity Tracker");
-    buildScene(stage, new StartFrame());
+    buildScene(stage, new StartFrame(), 1200, 800);
 
     }
 

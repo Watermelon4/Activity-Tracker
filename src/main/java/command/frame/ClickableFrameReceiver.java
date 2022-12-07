@@ -17,7 +17,7 @@ public class ClickableFrameReceiver implements IClickableFrame {
     @Override
     public void clickChecklistFrame(Pane root) throws IOException {
         SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new ChecklistFrame());
+        builder.showScene(new ChecklistFrame(), 1200, 800);
     }
 
     /**
@@ -26,7 +26,7 @@ public class ClickableFrameReceiver implements IClickableFrame {
     @Override
     public void clickCreateFrame(Pane root) throws IOException {
         SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new CreateFrame());
+        builder.showScene(new CreateFrame(), 1200, 800);
     }
 
     /**
@@ -35,7 +35,7 @@ public class ClickableFrameReceiver implements IClickableFrame {
     @Override
     public void clickSettingsFrame(Pane root) throws IOException {
         SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new SettingsFrame());
+        builder.showScene(new SettingsFrame(), 1200, 800);
     }
 
     /**
@@ -44,13 +44,13 @@ public class ClickableFrameReceiver implements IClickableFrame {
     @Override
     public void clickStartFrame(Pane root) throws IOException {
         SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new StartFrame());
+        builder.showScene(new StartFrame(), 1200, 800);
     }
 
     @Override
     public void clickChartFrame(Pane root) throws IOException {
         SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new ChartFrame());
+        builder.showScene(new ChartFrame(), 480, 360);
     }
 
 }
