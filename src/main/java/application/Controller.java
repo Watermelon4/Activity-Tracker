@@ -15,12 +15,20 @@ import java.util.ArrayList;
 public class Controller {
 
     public String bruh = "this is hard asf";
+
+    @FXML
     public CheckBox cb_1;
+    @FXML
     public CheckBox cb_2;
+    @FXML
     public CheckBox cb_3;
+    @FXML
     public CheckBox cb_4;
+    @FXML
     public CheckBox cb_5;
+    @FXML
     public CheckBox cb_6;
+    @FXML
     public CheckBox cb_7;
 
     @FXML
@@ -127,7 +135,6 @@ public class Controller {
 
         NewChecklist newChecklist = new NewChecklist(tf_checklistName.getText(), habitList);
         newChecklist.userInputListener();
-
 
         String filename = newChecklist.getChecklistName() + ".ser";
         loadChecklist(filename);
