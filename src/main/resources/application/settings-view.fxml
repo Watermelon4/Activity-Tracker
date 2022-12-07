@@ -43,7 +43,7 @@
                   <Label text="High Contrast" GridPane.rowIndex="1" />
                   <Label text="Night Mode" GridPane.rowIndex="2" />
                   <ComboBox prefWidth="150.0" GridPane.columnIndex="1" />
-                  <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <RadioButton mnemonicParsing="false" onAction="#toggleContrast" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
