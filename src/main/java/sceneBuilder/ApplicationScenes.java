@@ -71,7 +71,7 @@ public class ApplicationScenes {
      * @param type the type of stylesheet that is being applied
      * @param stylesheet the css file name of the new stylesheet to apply
      */
-    private void applyStylesheet(String type, String stylesheet) {
+    public void applyStylesheet(String type, String stylesheet) {
        if (scenes.containsKey(type)) {  // remove old stylesheet
            for (Scene scene : scenes.values()) {
                scene.getStylesheets().remove(PATH + appliedStylesheets.get(type));
@@ -86,6 +86,20 @@ public class ApplicationScenes {
            // add the new stylesheet to the record
            appliedStylesheets.put(type, stylesheet);
        }
+    }
+
+    /**
+     * Applies a stylesheet to all frames in the application. If the type of stylesheet has previously been applied, it
+     * will be replaced with the new stylesheet
+     * @param type the type of stylesheet that is being applied
+     * @param stylesheet the css file name of the new stylesheet to apply
+     */
+    public void removeStylesheet(String type, String stylesheet) {
+        for (Scene scene : scenes.values()) {
+            scene.getStylesheets().remove(PATH + stylesheet);
+        }
+        // remove from applied
+        appliedStylesheets.remove(type, stylesheet);
     }
 
 }
