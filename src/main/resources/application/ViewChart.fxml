@@ -24,8 +24,8 @@
             <Font name="Phosphate Inline" size="16.0" />
          </font>
       </Label>
-      <BorderPane fx:id="borderPaneFilter" layoutX="44.0" layoutY="119.0" prefHeight="360.0" prefWidth="480.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Button fx:id="mainScreen" layoutX="370.0" layoutY="34.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="82.0" text="Main Screen">
+      <BorderPane fx:id="borderPaneFilter" focusTraversable="true" layoutX="44.0" layoutY="119.0" prefHeight="360.0" prefWidth="480.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="mainScreen" layoutX="370.0" layoutY="34.0" mnemonicParsing="false" onAction="#showPrevious" prefHeight="20.0" prefWidth="82.0" text="Main Screen">
          <font>
             <Font name="Arial" size="10.0" />
          </font>

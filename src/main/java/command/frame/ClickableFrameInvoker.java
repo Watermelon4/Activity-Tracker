@@ -69,6 +69,7 @@ public class ClickableFrameInvoker {
             case "create-view.fxml" -> clickCreate();
             case "checklist-view.fxml" -> clickChecklist();
             case "start-view.fxml" -> clickStart();
+            case "ViewChart.fxml" -> clickChart();
         }
     }
 
