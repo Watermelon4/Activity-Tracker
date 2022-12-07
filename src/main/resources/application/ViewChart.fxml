@@ -26,7 +26,6 @@
             <Font name="Phosphate Inline" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="mainScreen" layoutX="309.0" layoutY="34.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="124.0" text="Back">
          <font>
             <Font name="Arial" size="10.0" />
          </font>

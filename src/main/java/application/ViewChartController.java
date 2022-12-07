@@ -3,14 +3,12 @@ package application;
 import builder.ViewBarChart;
 import builder.ViewChartFilter;
 import builder.ViewChartSort;
-import database.FileManager;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-
-import java.util.HashMap;
 
 
 public class ViewChartController {
@@ -23,6 +21,15 @@ public class ViewChartController {
 
     public ViewChartController() {
     }
+
+    /**
+     * Displays the previous frame.
+     * @throws IOException buildScene load error
+     */
+    public void showPrevious() throws IOException {
+        frameInvoker.clickPrevious(frameInvoker.popFrameStack());
+    }
+
     @FXML
     private void handleShowBarChart(ActionEvent event){
         HashMap dailyList = FileManager.getInstance().getCurrChecklist();
