@@ -3,7 +3,6 @@ package database;
 import mediator.Components.CheckedHabits;
 import mediator.Components.ChecklistName;
 import mediator.Components.Component;
-import mediator.Components.ListOfHabits;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
