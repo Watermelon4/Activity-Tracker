@@ -27,32 +27,35 @@ public final class FileManager implements Serializable {
      * Initialize a new CurrentChecklist object.
      *
      * @param checklistName String
+     * @param habitList ArrayList [String]
      */
-    public void initNewChecklist(String checklistName) {
+    public void initNewChecklist(String checklistName, ArrayList<String> habitList) {
         currChecklist = new CurrentChecklist(checklistName);
-    }
-
-    /**
-     * Populate the newly-initialized CurrentChecklist object.
-     *
-     * @param listOfHabits ArrayList [String]
-     */
-    public void finishNewChecklist(ArrayList<String> listOfHabits) {
-        for (String habit: listOfHabits) {
+        for (String habit: habitList) {
             currChecklist.getHabitCounts().put(habit, 0);
+            currChecklist.getListOfHabits().add(habit);
         }
+//        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + ".ser");
+//        currChecklist.saveChecklist(fileNameInput);
     }
 
-    public void updateExistingChecklist(ArrayList<String> checkedOffHabits) {
+    public void updateExistingChecklist(ArrayList<Integer> checkedOffHabits) {
         int penalty = currChecklist.penaltyCalculator();
         HashMap<String, Integer> habitCounts = currChecklist.getHabitCounts();
 
-        for (String checkedHabit: checkedOffHabits) {
-            Integer newCount = habitCounts.get(checkedHabit) - (penalty - 1);
-            habitCounts.put(checkedHabit, newCount);
+        int i = 0;
+        for (Integer checkedHabit: checkedOffHabits) {
+            if (checkedHabit == 0) {
+                Integer newCount = habitCounts.get(currChecklist.getListOfHabits().get(i)) - penalty;
+                habitCounts.put(currChecklist.getListOfHabits().get(i), newCount);
+            } else if (checkedHabit == 1) {
+                Integer newCount = habitCounts.get(currChecklist.getListOfHabits().get(i)) - (penalty - 1);
+                habitCounts.put(currChecklist.getListOfHabits().get(i), newCount);
+            }
+            ++i;
         }
 
-        for (String checkedHabit: checkedOffHabits) {
+        for (String checkedHabit: currChecklist.getListOfHabits()) {
             if (habitCounts.get(checkedHabit) < 0) {
                 habitCounts.put(checkedHabit, 0);
             }
@@ -60,20 +63,28 @@ public final class FileManager implements Serializable {
 
         currChecklist.updateDateStack();
 
-        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + "//.ser");
+//        // delete .ser
+        String filename = currChecklist.getChecklistName();
+//        File f = new File("savefiles//" + filename + ".ser");
+//        boolean sanityCheck = f.delete();
+//        print(sanityCheck);
+
+
+        // save .ser
+        File fileNameInput = new File("savefiles//" + filename + ".ser");
         currChecklist.saveChecklist(fileNameInput);
     }
 
     /** //TODO: This depends on how the corresponding scene is implemented!
      * Load an existing file.
      *
-     * @param filename File
+     * @param loadedChecklist File
      */
-    public void loadFile(File filename) {
-        throw new UnsupportedOperationException();
+    public void loadFile(Object loadedChecklist) {
+        this.currChecklist = (CurrentChecklist) loadedChecklist;
     }
 
-    /** //TODO: This depends on how the corresponding scene is implemented!
+    /** //TODO: Not enough time
      * Delete the chosen file.
      *
      * @param filename File
@@ -89,6 +100,24 @@ public final class FileManager implements Serializable {
      */
     public HashMap<String, Integer> getCurrChecklist() {
         return currChecklist.getHabitCounts();
+    }
+
+    /**
+     * Getter method for the list of habits for currChecklist.
+     *
+     * @return HashMap [String: Integer]
+     */
+    public ArrayList<String> getListOfHabits() {
+        return currChecklist.getListOfHabits();
+    }
+
+    /**
+     * Getter method for the list of habits for currChecklist.
+     *
+     * @return HashMap [String: Integer]
+     */
+    public String getChecklistName() {
+        return currChecklist.getChecklistName();
     }
 
     /**
