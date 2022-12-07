@@ -13,14 +13,16 @@ public class CurrentChecklist implements Serializable {
 
     private String name;
     private HashMap<String, Integer> habitCounts;
+    private ArrayList<String> listOfHabits;
     private Stack<LocalDate> dateStack;
 
     /**
      * Initialize the attributes.
      */
     public CurrentChecklist(String checklistName) {
-        this.name = checklistName;
         this.habitCounts = new HashMap<>();
+        this.name = checklistName;
+        this.listOfHabits = new ArrayList<>();
 //        this.habitCounts.put("Run",2);
 //        this.habitCounts.put("Read",4);
 //        this.habitCounts.put("Swim",6);
@@ -29,10 +31,6 @@ public class CurrentChecklist implements Serializable {
 //        this.habitCounts.put("Skip",3);
 //        this.habitCounts.put("Dance",5);
         this.dateStack = new Stack<>();
-    }
-
-    public void blankSlate() {
-        this.habitCounts = null;
     }
 
     /**
@@ -51,6 +49,15 @@ public class CurrentChecklist implements Serializable {
      */
     public String getChecklistName() {
         return name;
+    }
+
+    /**
+     * Getter method for the list of habits in this checklist
+     *
+     * @return ArrayList [String]
+     */
+    public ArrayList<String> getListOfHabits() {
+        return listOfHabits;
     }
 
     /**

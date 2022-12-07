@@ -33,9 +33,10 @@ public final class FileManager implements Serializable {
         currChecklist = new CurrentChecklist(checklistName);
         for (String habit: habitList) {
             currChecklist.getHabitCounts().put(habit, 0);
+            currChecklist.getListOfHabits().add(habit);
         }
-        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + ".ser");
-        currChecklist.saveChecklist(fileNameInput);
+//        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + ".ser");
+//        currChecklist.saveChecklist(fileNameInput);
     }
 
     public void updateExistingChecklist(ArrayList<String> checkedOffHabits) {
@@ -84,6 +85,15 @@ public final class FileManager implements Serializable {
      */
     public HashMap<String, Integer> getCurrChecklist() {
         return currChecklist.getHabitCounts();
+    }
+
+    /**
+     * Getter method for the list of habits for currChecklist.
+     *
+     * @return HashMap [String: Integer]
+     */
+    public ArrayList<String> getListOfHabits() {
+        return currChecklist.getListOfHabits();
     }
 
     /**

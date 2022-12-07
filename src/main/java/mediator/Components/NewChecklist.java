@@ -25,7 +25,7 @@ public class NewChecklist extends Component {
         this.dialog = new ConcreteMediator();
     }
 
-    /** //TODO: This depends on how the corresponding scene is implemented!
+    /**
      * Listen for user input from GUI and communicate with Mediator accordingly.
      */
     public void userInputListener() {

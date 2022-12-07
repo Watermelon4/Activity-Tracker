@@ -1,5 +1,7 @@
 package mediator.Components;
 
+import mediator.ConcreteMediator;
+
 import java.util.*;
 
 /**
@@ -18,19 +20,16 @@ public class CheckedHabits extends Component {
     /**
      * Initialize instance attribute.
      */
-    public CheckedHabits() {
-        this.checkedOffHabits = new ArrayList<>();
+    public CheckedHabits(ArrayList<String> checkedOffHabits) {
+        this.checkedOffHabits = checkedOffHabits;
         this.componentType = "B";
+        this.dialog = new ConcreteMediator();
     }
 
     /**
      * Listen for user input from GUI and communicate with Mediator accordingly.
      */
     public void userInputListener() {
-        // Build the list of CheckedOffHabits before calling dialog.execute
-        // ================================================================
-        // TODO: This depends on how the corresponding scene is implemented!
-        // ================================================================
         dialog.execute(this);
     }
 

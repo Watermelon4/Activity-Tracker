@@ -46,14 +46,14 @@
               </rowConstraints>
                <children>
                   <Label text="Check a habit that you've reinforced today!" />
-                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 1" GridPane.rowIndex="1" />
-                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 2" GridPane.rowIndex="2" />
-                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 3" GridPane.rowIndex="3" />
-                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 4" GridPane.rowIndex="4" />
-                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 5" GridPane.rowIndex="5" />
-                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 6" GridPane.rowIndex="6" />
-                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 7" GridPane.rowIndex="7" />
-                  <Button mnemonicParsing="false" onAction="#showChart" text="Save" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 1" GridPane.rowIndex="1" fx:id="cb_1" />
+                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 2" GridPane.rowIndex="2" fx:id="cb_2" />
+                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 3" GridPane.rowIndex="3" fx:id="cb_3" />
+                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 4" GridPane.rowIndex="4" fx:id="cb_4" />
+                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 5" GridPane.rowIndex="5" fx:id="cb_5" />
+                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 6" GridPane.rowIndex="6" fx:id="cb_6" />
+                   <CheckBox mnemonicParsing="false" text="Habit Placeholder 7" GridPane.rowIndex="7" fx:id="cb_7" />
+                  <Button mnemonicParsing="false" onAction="#userInputListener_02" text="Save &amp; Show Progress" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
                </children>
             </GridPane>
          </children>

@@ -3,8 +3,10 @@ package application;
 import command.frame.*;
 import database.FileManager;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import mediator.Components.CheckedHabits;
 import mediator.Components.NewChecklist;
 
 import java.io.*;
@@ -13,6 +15,13 @@ import java.util.ArrayList;
 public class Controller {
 
     public String bruh = "this is hard asf";
+    public CheckBox cb_1;
+    public CheckBox cb_2;
+    public CheckBox cb_3;
+    public CheckBox cb_4;
+    public CheckBox cb_5;
+    public CheckBox cb_6;
+    public CheckBox cb_7;
 
     @FXML
     private ClickableFrameInvoker frameInvoker;
@@ -119,16 +128,19 @@ public class Controller {
         NewChecklist newChecklist = new NewChecklist(tf_checklistName.getText(), habitList);
         newChecklist.userInputListener();
 
+
         String filename = newChecklist.getChecklistName() + ".ser";
-
-        // load this newly-created file
-        File folder = new File("savefiles");
-        File[] files = folder.listFiles();
-
         loadChecklist(filename);
 
         // switch scene
         showChecklist();
+
+        cb_1.setText("bruh");
+        System.out.println(cb_1.getText());
+//        File f = new File("savefiles//" + filename);
+//        f.delete();
+
+
     }
 
     public void loadChecklist(String filename) throws IOException {
@@ -157,8 +169,57 @@ public class Controller {
         }
     }
 
-    public void displayLoadedHabits() {
+    public void userInputListener_02() throws IOException{
 
+        ArrayList<String> bruh = new ArrayList<>();
+        if (cb_1.isSelected()) bruh.add(cb_1.getText());
+        if (cb_2.isSelected()) bruh.add(cb_2.getText());
+        if (cb_3.isSelected()) bruh.add(cb_3.getText());
+        if (cb_4.isSelected()) bruh.add(cb_4.getText());
+        if (cb_5.isSelected()) bruh.add(cb_5.getText());
+        if (cb_6.isSelected()) bruh.add(cb_6.getText());
+        if (cb_7.isSelected()) bruh.add(cb_7.getText());
+
+        CheckedHabits checkedHabits = new CheckedHabits(bruh);
+        checkedHabits.userInputListener();
+
+        showChart();
     }
+
+    public String displayHabit_1() {
+        FileManager fm = FileManager.getInstance();
+        return fm.getListOfHabits().get(0);
+    }
+
+    public String displayHabit_2() {
+        FileManager fm = FileManager.getInstance();
+        return fm.getListOfHabits().get(1);
+    }
+
+    public String displayHabit_3() {
+        FileManager fm = FileManager.getInstance();
+        return fm.getListOfHabits().get(2);
+    }
+
+    public String displayHabit_4() {
+        FileManager fm = FileManager.getInstance();
+        return fm.getListOfHabits().get(3);
+    }
+
+    public String displayHabit_5() {
+        FileManager fm = FileManager.getInstance();
+        return fm.getListOfHabits().get(4);
+    }
+
+    public String displayHabit_6() {
+        FileManager fm = FileManager.getInstance();
+        return fm.getListOfHabits().get(5);
+    }
+
+    public String displayHabit_7() {
+        FileManager fm = FileManager.getInstance();
+        return fm.getListOfHabits().get(6);
+    }
+
 
 }
