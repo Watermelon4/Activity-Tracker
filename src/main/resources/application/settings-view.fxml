@@ -44,7 +44,7 @@
                   <Label text="Font Size" />
                   <Label text="High Contrast" GridPane.rowIndex="1" />
                   <Label text="Night Mode" GridPane.rowIndex="2" />
-                  <ComboBox onAction="#pickFont" prefWidth="280.0" promptText="12px/18px" GridPane.columnIndex="1">
+                  <ComboBox prefWidth="280.0" promptText="12px/18px" GridPane.columnIndex="1">
                    <items>
                        <FXCollections fx:factory="observableArrayList">
                            <String fx:id="12px" fx:value="12px/18px" />
