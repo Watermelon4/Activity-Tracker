@@ -27,20 +27,15 @@ public final class FileManager implements Serializable {
      * Initialize a new CurrentChecklist object.
      *
      * @param checklistName String
+     * @param habitList ArrayList [String]
      */
-    public void initNewChecklist(String checklistName) {
+    public void initNewChecklist(String checklistName, ArrayList<String> habitList) {
         currChecklist = new CurrentChecklist(checklistName);
-    }
-
-    /**
-     * Populate the newly-initialized CurrentChecklist object.
-     *
-     * @param listOfHabits ArrayList [String]
-     */
-    public void finishNewChecklist(ArrayList<String> listOfHabits) {
-        for (String habit: listOfHabits) {
+        for (String habit: habitList) {
             currChecklist.getHabitCounts().put(habit, 0);
         }
+        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + ".ser");
+        currChecklist.saveChecklist(fileNameInput);
     }
 
     public void updateExistingChecklist(ArrayList<String> checkedOffHabits) {
@@ -60,20 +55,20 @@ public final class FileManager implements Serializable {
 
         currChecklist.updateDateStack();
 
-        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + "//.ser");
+        File fileNameInput = new File("savefiles//" + currChecklist.getChecklistName() + ".ser");
         currChecklist.saveChecklist(fileNameInput);
     }
 
     /** //TODO: This depends on how the corresponding scene is implemented!
      * Load an existing file.
      *
-     * @param filename File
+     * @param loadedChecklist File
      */
-    public void loadFile(File filename) {
-        throw new UnsupportedOperationException();
+    public void loadFile(Object loadedChecklist) {
+        this.currChecklist = (CurrentChecklist) loadedChecklist;
     }
 
-    /** //TODO: This depends on how the corresponding scene is implemented!
+    /** //TODO: Not enough time
      * Delete the chosen file.
      *
      * @param filename File

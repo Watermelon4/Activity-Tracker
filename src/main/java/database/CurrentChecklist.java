@@ -31,6 +31,10 @@ public class CurrentChecklist implements Serializable {
         this.dateStack = new Stack<>();
     }
 
+    public void blankSlate() {
+        this.habitCounts = null;
+    }
+
     /**
      * Getter method for habit counts
      *

@@ -20,7 +20,7 @@ public class CheckedHabits extends Component {
      */
     public CheckedHabits() {
         this.checkedOffHabits = new ArrayList<>();
-        this.componentType = "C";
+        this.componentType = "B";
     }
 
     /**

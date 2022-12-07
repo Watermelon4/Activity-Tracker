@@ -2,8 +2,6 @@ package mediator.Components;
 
 import mediator.Mediator;
 
-import java.util.ArrayList;
-
 /**
  * MEDIATOR PATTERN<br>
  * --------------------------<br>
@@ -12,7 +10,7 @@ import java.util.ArrayList;
  */
 public abstract class Component {
 
-    protected Mediator dialog;
+    public Mediator dialog;
 
     public String componentType;
 

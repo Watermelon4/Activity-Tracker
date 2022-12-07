@@ -45,8 +45,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Today's Date" />
-                  <DatePicker GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                  <Label text="Check a habit that you've reinforced today!" />
                    <CheckBox mnemonicParsing="false" text="Habit Placeholder 1" GridPane.rowIndex="1" />
                    <CheckBox mnemonicParsing="false" text="Habit Placeholder 2" GridPane.rowIndex="2" />
                    <CheckBox mnemonicParsing="false" text="Habit Placeholder 3" GridPane.rowIndex="3" />
