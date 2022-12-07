@@ -63,7 +63,6 @@ public final class FileManager implements Serializable {
 
         currChecklist.updateDateStack();
 
-//        // delete .ser
         String filename = currChecklist.getChecklistName();
 //        File f = new File("savefiles//" + filename + ".ser");
 //        boolean sanityCheck = f.delete();
@@ -75,7 +74,7 @@ public final class FileManager implements Serializable {
         currChecklist.saveChecklist(fileNameInput);
     }
 
-    /** //TODO: This depends on how the corresponding scene is implemented!
+    /**
      * Load an existing file.
      *
      * @param loadedChecklist File
