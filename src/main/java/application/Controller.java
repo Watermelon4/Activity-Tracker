@@ -1,5 +1,6 @@
 package application;
 
+import command.*;
 import command.frame.*;
 import database.FileManager;
 import javafx.fxml.FXML;
@@ -8,6 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import mediator.Components.CheckedHabits;
 import mediator.Components.NewChecklist;
+import javafx.scene.control.ComboBox;
+import javafx.scene.layout.Pane;
+import sceneBuilder.ApplicationScenes;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -34,11 +38,7 @@ public class Controller {
     @FXML
     private ClickableFrameInvoker frameInvoker;
 
-    /**
-     * The root AnchorPane
-     */
-    @FXML
-    private Pane root;
+    private ToggleableInvoker toggleInvoker;
 
     @FXML
     public TextField tf_checklistName;
@@ -64,14 +64,19 @@ public class Controller {
         IClickableFrame frameReceiver = new ClickableFrameReceiver();
 
         // Pass reference to the frameReceiver instance to each concrete command
-        IFrameCommand clickSettingsCommand = new ClickSettingsFrame(frameReceiver, root);
-        IFrameCommand clickCreateCommand = new ClickCreateFrame(frameReceiver, root);
-        IFrameCommand clickChecklistCommand = new ClickChecklistFrame(frameReceiver, root);
-        IFrameCommand clickStartCommand = new ClickStartFrame(frameReceiver, root);
-        IFrameCommand clickChartCommand = new ClickChartFrame(frameReceiver, root);
+        IFrameCommand clickSettingsCommand = new ClickSettingsFrame(frameReceiver);
+        IFrameCommand clickCreateCommand = new ClickCreateFrame(frameReceiver);
+        IFrameCommand clickChecklistCommand = new ClickChecklistFrame(frameReceiver);
+        IFrameCommand clickStartCommand = new ClickStartFrame(frameReceiver);
+        IFrameCommand clickChartCommand = new ClickChartFrame(frameReceiver);
 
         // Pass instances of the Command objects to the invoker
         this.frameInvoker = new ClickableFrameInvoker(clickSettingsCommand, clickCreateCommand, clickChecklistCommand, clickStartCommand, clickChartCommand);
+
+        // command for contrast
+        IToggleable toggleReceiver = new ToggleableReceiver();
+        ICommand contrastCommand = new ToggleContrastCommand(false, toggleReceiver);
+        this.toggleInvoker = new ToggleableInvoker(contrastCommand);
     }
 
     /**
@@ -209,10 +214,14 @@ public class Controller {
 
     }
 
-
-
     private void print(Object o) {
         System.out.println(o);
+
+    /**
+     * Toggles high contrast mode.
+     */
+    public void toggleContrast() {
+        toggleInvoker.toggle();
     }
 
 }

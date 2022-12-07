@@ -1,7 +1,5 @@
 package command.frame;
 
-import javafx.scene.layout.Pane;
-
 import java.io.IOException;
 
 /**
@@ -15,16 +13,10 @@ public class ClickChecklistFrame implements IFrameCommand {
     private final IClickableFrame clickable;
 
     /**
-     * The root of the scene
-     */
-    private final Pane root;
-
-    /**
      * Constructor for the click checklist concrete command.
      */
-    public ClickChecklistFrame(IClickableFrame clickable, Pane root) {
+    public ClickChecklistFrame(IClickableFrame clickable) {
         this.clickable = clickable;
-        this.root = root;
     }
 
     /**
@@ -33,7 +25,7 @@ public class ClickChecklistFrame implements IFrameCommand {
      */
     @Override
     public void execute() throws IOException {
-        clickable.clickChecklistFrame(root);
+        clickable.clickChecklistFrame();
     }
 
     /**

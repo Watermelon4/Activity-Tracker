@@ -1,10 +1,7 @@
 package command.frame;
 
-import frame.*;
-import sceneBuilder.SceneBuilder;
-import javafx.scene.layout.Pane;
-
-import java.io.IOException;
+import application.ActivityTracker;
+import sceneBuilder.ApplicationScenes;
 
 /**
  * The receiver class for clickable.
@@ -15,42 +12,45 @@ public class ClickableFrameReceiver implements IClickableFrame {
      * {@inheritDoc}
      */
     @Override
-    public void clickChecklistFrame(Pane root) throws IOException {
-        SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new ChecklistFrame());
+    public void clickChecklistFrame() {
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        applicationScenes.showScene("checklist-view.fxml");
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void clickCreateFrame(Pane root) throws IOException {
-        SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new CreateFrame());
+    public void clickCreateFrame() {
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        applicationScenes.showScene("create-view.fxml");
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void clickSettingsFrame(Pane root) throws IOException {
-        SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new SettingsFrame());
+    public void clickSettingsFrame() {
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        applicationScenes.showScene("settings-view.fxml");
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void clickStartFrame(Pane root) throws IOException {
-        SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new StartFrame());
+    public void clickStartFrame() {
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        applicationScenes.showScene("start-view.fxml");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public void clickChartFrame(Pane root) throws IOException {
-        SceneBuilder builder = new SceneBuilder(root);
-        builder.showScene(new ChartFrame());
+    public void clickChartFrame() {
+        ApplicationScenes applicationScenes = ActivityTracker.getApplicationScenes();
+        applicationScenes.showScene("ViewChart.fxml");
     }
 
 }
