@@ -22,8 +22,8 @@ public class ActivityTracker extends Application {
 
     // Added by NUGO
     // =================
-    FXMLLoader fxmlLoader = new FXMLLoader(ActivityTracker.class.getResource("ViewChart.fxml"));
-    Scene scene = new Scene(fxmlLoader.load(), 480, 360); //1200 x 800 for original dimensions
+    // FXMLLoader fxmlLoader = new FXMLLoader(ActivityTracker.class.getResource("ViewChart.fxml"));
+    // Scene scene = new Scene(fxmlLoader.load(), 480, 360); //1200 x 800 for original dimensions
 
     // Added by GEORGE
     // =================
